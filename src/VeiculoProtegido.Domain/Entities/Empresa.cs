@@ -22,6 +22,7 @@ namespace VeiculoProtegido.Domain.Entities
 		public string Documento { get; set; }
 		public DateTime DataFundacao { get; set; }
 		public DateTime DataCadastro { get; set; }
+		public string Email { get; set; }
 		public bool Ativo { get; set; }
 		public virtual ICollection<Endereco> Enderecos { get; set; }
 		public ValidationResult ValidationResult { get; set; }
