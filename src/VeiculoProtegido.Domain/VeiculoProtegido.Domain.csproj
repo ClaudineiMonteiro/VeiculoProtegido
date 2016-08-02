@@ -37,10 +37,11 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Empresa.cs" />
+    <Compile Include="Entities\Endereco.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Entities\" />
     <Folder Include="Interfaces\" />
     <Folder Include="Services\" />
     <Folder Include="Specifications\" />
