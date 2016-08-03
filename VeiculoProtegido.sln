@@ -17,6 +17,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VeiculoProtegido.Domain", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VeiculoProtegido.Domain.Tests", "tests\VeiculoProtegido.Domain.Tests\VeiculoProtegido.Domain.Tests.csproj", "{2406246B-24D7-4B8A-BB9C-B203D7BC2905}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.1 - Data", "5.1 - Data", "{1104712F-C0A9-402D-A179-00DD407F5D17}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.2 - CrossCutting", "5.2 - CrossCutting", "{E8DF70B6-E143-4258-BBAC-803010EADAE8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VeiculoProtegido.Infra.CrossCutting.IoC", "src\VeiculoProtegido.Infra.CrossCutting.IoC\VeiculoProtegido.Infra.CrossCutting.IoC.csproj", "{4ED5F87B-22F2-4237-980C-4695C4F5F86D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +37,10 @@ Global
 		{2406246B-24D7-4B8A-BB9C-B203D7BC2905}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2406246B-24D7-4B8A-BB9C-B203D7BC2905}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2406246B-24D7-4B8A-BB9C-B203D7BC2905}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4ED5F87B-22F2-4237-980C-4695C4F5F86D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4ED5F87B-22F2-4237-980C-4695C4F5F86D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4ED5F87B-22F2-4237-980C-4695C4F5F86D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4ED5F87B-22F2-4237-980C-4695C4F5F86D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -38,5 +48,8 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{69FFAA45-FE3A-481F-A83C-471443C71B3F} = {82D201C6-ADB1-41C3-976D-5E4A91B41E07}
 		{2406246B-24D7-4B8A-BB9C-B203D7BC2905} = {82D201C6-ADB1-41C3-976D-5E4A91B41E07}
+		{1104712F-C0A9-402D-A179-00DD407F5D17} = {38B83BCE-5404-49F2-829F-637A42EE1097}
+		{E8DF70B6-E143-4258-BBAC-803010EADAE8} = {38B83BCE-5404-49F2-829F-637A42EE1097}
+		{4ED5F87B-22F2-4237-980C-4695C4F5F86D} = {E8DF70B6-E143-4258-BBAC-803010EADAE8}
 	EndGlobalSection
 EndGlobal
