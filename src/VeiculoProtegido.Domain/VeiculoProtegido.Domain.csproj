@@ -38,22 +38,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\Marca.cs" />
-    <Compile Include="Entities\Empresa.cs" />
-    <Compile Include="Entities\Endereco.cs" />
     <Compile Include="Entities\Modelo.cs" />
     <Compile Include="Entities\PrecoFIPE.cs" />
     <Compile Include="Entities\Veiculo.cs" />
-    <Compile Include="Interfaces\Repository\IEmpresaRepository.cs" />
-    <Compile Include="Interfaces\Repository\IEnderecoRepository.cs" />
     <Compile Include="Interfaces\Repository\IRepository.cs" />
-    <Compile Include="Interfaces\Service\IEmpresaService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\EmpresaService.cs" />
-    <Compile Include="Specifications\Empresas\EmpresaMustHaveEmailUniqueSpecification.cs" />
     <Compile Include="Validations\Documentos\CPFValidation.cs" />
-    <Compile Include="Validations\Empresas\EmpresaAbleToRegisterValidation.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Interfaces\Service\" />
+    <Folder Include="Services\" />
+    <Folder Include="Specifications\Empresas\" />
+    <Folder Include="Validations\Empresas\" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>

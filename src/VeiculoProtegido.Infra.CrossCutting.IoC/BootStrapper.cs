@@ -1,6 +1,4 @@
 ﻿using SimpleInjector;
-using VeiculoProtegido.Domain.Interfaces.Service;
-using VeiculoProtegido.Domain.Services;
 
 namespace VeiculoProtegido.Infra.CrossCutting.IoC
 {
@@ -9,7 +7,7 @@ namespace VeiculoProtegido.Infra.CrossCutting.IoC
 		public static void RegisterServices(Container container)
 		{
 			//Domain
-			container.RegisterPerWebRequest<IEmpresaService, EmpresaService>();
+			//container.RegisterPerWebRequest<IEmpresaService, EmpresaService>();
 		}
 	}
 }
