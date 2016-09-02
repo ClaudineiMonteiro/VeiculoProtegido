@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VeiculoProtegido.Services.R
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VeiculoProtegido.Infra.Data", "src\VeiculoProtegido.Infra.Data\VeiculoProtegido.Infra.Data.csproj", "{F75E77F5-DFDF-4D77-8943-E1861F87C156}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VeiculoProtegido.UI.Mvc", "src\VeiculoProtegido.UI.Mvc\VeiculoProtegido.UI.Mvc.csproj", "{2EC8C424-F62F-4AE0-852F-41F75F2A003C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,6 +61,10 @@ Global
 		{F75E77F5-DFDF-4D77-8943-E1861F87C156}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F75E77F5-DFDF-4D77-8943-E1861F87C156}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F75E77F5-DFDF-4D77-8943-E1861F87C156}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2EC8C424-F62F-4AE0-852F-41F75F2A003C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EC8C424-F62F-4AE0-852F-41F75F2A003C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EC8C424-F62F-4AE0-852F-41F75F2A003C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EC8C424-F62F-4AE0-852F-41F75F2A003C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -74,5 +80,6 @@ Global
 		{7916B5D0-C36D-4175-B218-45A59563A1EE} = {FE53529F-44DB-49C0-8A4C-EB3C4776BCBE}
 		{C8F05087-2822-4EE5-AF4D-A1A7D5425852} = {9C6EF474-6DA7-4CE2-A917-B6AC5BB87E66}
 		{F75E77F5-DFDF-4D77-8943-E1861F87C156} = {1104712F-C0A9-402D-A179-00DD407F5D17}
+		{2EC8C424-F62F-4AE0-852F-41F75F2A003C} = {0F72EC8C-A6C4-4F55-97B5-61384DA0B618}
 	EndGlobalSection
 EndGlobal
