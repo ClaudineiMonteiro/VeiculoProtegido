@@ -26,5 +26,13 @@ namespace VeiculoProtegido.UI.Mvc.Controllers
 
 			return View();
 		}
+
+		public ActionResult FormElements()
+		{
+			ViewBag.Message = "Form Elements";
+
+			return View();
+		}
+
 	}
 }

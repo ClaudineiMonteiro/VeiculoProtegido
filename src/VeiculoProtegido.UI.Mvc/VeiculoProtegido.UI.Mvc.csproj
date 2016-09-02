@@ -5647,6 +5647,7 @@
     <Content Include="vendor\widgster\bower.json" />
     <Content Include="vendor\widgster\LICENSE" />
     <Content Include="vendor\widgster\README.md" />
+    <Content Include="Views\Home\FormElements.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
