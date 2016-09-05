@@ -4,7 +4,7 @@ namespace VeiculoProtegido.Application.AutoMapper
 {
 	public class AutoMapperConfig
 	{
-		public static void RegisterMappins()
+		public static void RegisterMappings()
 		{
 			Mapper.Initialize(x =>
 			{
