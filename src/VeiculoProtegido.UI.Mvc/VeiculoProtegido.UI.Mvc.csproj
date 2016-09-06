@@ -52,6 +52,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -5667,6 +5668,10 @@
     <ProjectReference Include="..\VeiculoProtegido.Application\VeiculoProtegido.Application.csproj">
       <Project>{58c0aa55-d516-44a8-83d5-a5186627fb85}</Project>
       <Name>VeiculoProtegido.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VeiculoProtegido.Domain\VeiculoProtegido.Domain.csproj">
+      <Project>{69FFAA45-FE3A-481F-A83C-471443C71B3F}</Project>
+      <Name>VeiculoProtegido.Domain</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
