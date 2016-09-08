@@ -25,7 +25,16 @@
                                 <div class="form-group row">
                                     <label class="col-md-4 control-label" for="Selecione-Marca">Selecione a Marca do Veiculo</label>
                                     <div class="col-md-8">
-                                        <select id="SelecionarVeiculo" data-placeholder="Selecionar Veiculo" class="select2 form-control" tabindex="-1" name="Veiculo">
+                                        <select id="Marca-Select"
+                                                data-placeholder="Selecionar Veiculo"
+                                                class="select2 form-control"
+                                                tabindex="-1"
+                                                name="Marca">
+                                            <option value=""></option>
+                                            @foreach (var marca in Model)
+                                            {
+                                                <option value="@marca.codigo">@marca.nome</option>
+                                            }
                                         </select>
                                     </div>
                                 </div>
