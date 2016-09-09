@@ -248,6 +248,7 @@
     <Content Include="js\settings.js" />
     <Content Include="js\tables-basic.js" />
     <Content Include="js\tables-dynamic.js" />
+    <Content Include="js\teste.js" />
     <Content Include="js\timeline.js" />
     <Content Include="js\ui-buttons.js" />
     <Content Include="js\ui-components.js" />
@@ -5651,6 +5652,7 @@
     <Content Include="vendor\widgster\README.md" />
     <Content Include="Views\Home\FormElements.cshtml" />
     <Content Include="Views\Fipe\Carro.cshtml" />
+    <Content Include="Views\Fipe\Teste.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -45,7 +45,7 @@ $(function(){
                 "</li>";
         }
     };
-    function pageLoad(){
+    function pageLoad() {
         $('#tooltip-enabled, #max-length').tooltip();
         $('.selectpicker').selectpicker();
         $(".autogrow").autosize({append: "\n"});

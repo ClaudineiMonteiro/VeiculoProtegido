@@ -33,5 +33,30 @@ namespace VeiculoProtegido.UI.Mvc.Controllers
 			else
 				return null;
 		}
+
+		public ActionResult Teste()
+		{
+			return View();
+		}
+		public JsonResult RetornarCidades(string estadoId)
+		{
+			var cidades = new List<object>();
+			if (estadoId == "SP")
+			{
+				cidades.Add(new { Codigo = 1, Nome = "São Paulo" });
+				cidades.Add(new { Codigo = 2, Nome = "Indaiatuba" });
+				cidades.Add(new { Codigo = 3, Nome = "Campinas" });
+				cidades.Add(new { Codigo = 3, Nome = "Salto" });
+			}
+			else if (estadoId == "RJ")
+			{
+				cidades.Add(new { Codigo = 4, Nome = "Rio de Janeiro" });
+				cidades.Add(new { Codigo = 5, Nome = "Niterói" });
+				cidades.Add(new { Codigo = 6, Nome = "Maricá" });
+				cidades.Add(new { Codigo = 7, Nome = "Ilha do Governador" });
+			}
+
+			return Json(cidades, JsonRequestBehavior.AllowGet);
+		}
 	}
 }
