@@ -4,6 +4,7 @@ using System.Net.Http;
 using System.Web.Mvc;
 using VeiculoProtegido.Application.Interfaces;
 using VeiculoProtegido.Application.ViewModels;
+using VeiculoProtegido.Domain.Entities;
 
 namespace VeiculoProtegido.UI.Mvc.Controllers
 {
@@ -34,29 +35,20 @@ namespace VeiculoProtegido.UI.Mvc.Controllers
 				return null;
 		}
 
-		public ActionResult Teste()
+		public JsonResult RetornarModelos(string marcaId)
 		{
-			return View();
-		}
-		public JsonResult RetornarCidades(string estadoId)
-		{
-			var cidades = new List<object>();
-			if (estadoId == "SP")
+			var modelo = string.Format("/api/v1/carros/marcas/{0}/modelos",
+				marcaId);
+			var response = client.GetAsync(modelo).Result;
+			if (response.IsSuccessStatusCode)
 			{
-				cidades.Add(new { Codigo = 1, Nome = "São Paulo" });
-				cidades.Add(new { Codigo = 2, Nome = "Indaiatuba" });
-				cidades.Add(new { Codigo = 3, Nome = "Campinas" });
-				cidades.Add(new { Codigo = 3, Nome = "Salto" });
+				var marcaUri = response.Headers.Location;
+				var modelos = response.Content.ReadAsAsync<ModeloAno>().Result;
+				return Json(modelos, JsonRequestBehavior.AllowGet);
 			}
-			else if (estadoId == "RJ")
-			{
-				cidades.Add(new { Codigo = 4, Nome = "Rio de Janeiro" });
-				cidades.Add(new { Codigo = 5, Nome = "Niterói" });
-				cidades.Add(new { Codigo = 6, Nome = "Maricá" });
-				cidades.Add(new { Codigo = 7, Nome = "Ilha do Governador" });
-			}
+			else
+				return null;
 
-			return Json(cidades, JsonRequestBehavior.AllowGet);
 		}
 	}
 }

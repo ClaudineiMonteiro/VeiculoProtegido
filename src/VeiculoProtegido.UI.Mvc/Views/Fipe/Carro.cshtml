@@ -25,7 +25,7 @@
                                 <div class="form-group row">
                                     <label class="col-md-4 control-label" for="MarcaSelect">Selecione a Marca do Veiculo</label>
                                     <div class="col-md-8">
-                                        <select id="MarcaSelect"
+                                        <select id="cboMarca"
                                                 data-placeholder="Selecionar Veiculo"
                                                 class="select2 form-control"
                                                 tabindex="-1"
@@ -33,9 +33,25 @@
                                             <option value=""></option>
                                             @foreach (var marca in Model)
                                             {
-                                                <option value="@marca.codigo">@marca.nome</option>
-                                            }
+                                                <option value="@marca.codigo">@marca.nome</option>}
                                         </select>
+                                    </div>
+                                    <label class="col-md-4 control-label" for="ModeloSelect">Selecione o Modelo do Veiculo</label>
+                                    <div class="col-md-8">
+                                        <select id="cboModelo"
+                                                data-placeholder="Selecionar Modelo"
+                                                class="select2 form-control"
+                                                tabindex="-1"
+                                                name="Marca">
+                                        </select>
+                                    </div>
+                                    <label class="col-md-4 control-label" for="AnoSelect">Selecione o Ano e Combustivel do Veiculo</label>
+                                    <div class="col-md-8">
+                                        <select id="cboAno"
+                                                data-placeholder="Selecionar Ano/Combustivel"
+                                                class="select2 form-control"
+                                                tabindex="-1"
+                                                name="Ano"></select>
                                     </div>
                                 </div>
                             </fieldset>
@@ -46,16 +62,5 @@
         </div>
     </main>
 </div>
-@section scripts{
-    <script>
-        $(document).ready(function () {
-            $("#MarcaSelect").change(function () {
-                Alerta($(this).val());
-            });
-        });
-        function Alerta()
-        {
-            alert('zub');
-        }
-    </script>}
-
+<!-- page specific js -->
+<script src="~/js/carro.js"></script>
