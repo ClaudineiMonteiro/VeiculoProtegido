@@ -19,4 +19,17 @@
             });
         });
     });
+
+    $("#cboModelo").change(function () {
+        var filtro = $(this).val();
+        var combo = $('#cboAno option');
+        $.map(combo, function (opt, i) {
+            if (opt.value == filtro) {
+                $(opt).show();
+            } else {
+                $(opt).hide();
+            }
+            //$('#cboModelo').val(filtro);
+        });
+    });
 })
