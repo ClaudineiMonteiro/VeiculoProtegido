@@ -50,5 +50,21 @@ namespace VeiculoProtegido.UI.Mvc.Controllers
 				return null;
 
 		}
+
+		public JsonResult RetornarAnoPorModelo(string marcaId, string modeloId)
+		{
+			var marcaModelo = string.Format("/api/v1/carros/marcas/{0}/modelos/{1}/anos",
+				marcaId,
+				modeloId);
+			var response = client.GetAsync(marcaModelo).Result;
+			if (response.IsSuccessStatusCode)
+			{
+				var marcaUri = response.Headers.Location;
+				var marcasModelos = response.Content.ReadAsAsync<ModeloAno>().Result;
+				return Json(marcasModelos, JsonRequestBehavior.AllowGet);
+			}
+			else
+				return null;
+		}
 	}
 }

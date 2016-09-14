@@ -38,6 +38,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\Marca.cs" />
+    <Compile Include="Entities\MarcaModeloAno.cs" />
     <Compile Include="Entities\Modelo.cs" />
     <Compile Include="Entities\PrecoFIPE.cs" />
     <Compile Include="Entities\Veiculo.cs" />

@@ -21,6 +21,14 @@
     });
 
     $("#cboModelo").change(function () {
+        var marcaId = document.getElementById('cboMarca').value;
+        var modeloId = $(this).val();
+        var actionUrl = './RetornarAnoPorModelo/?marcaId=' + marcaId + '&modeloId=' + modeloId;
+        $.getJSON(actionUrl, function (data) {
+            $(data.anos).each(function (key, val) {
+                $('#cboAno').append('<option value="' + val.codigo + '">' + val.nome + '</option>');
+            });
+        });
         var filtro = $(this).val();
         var combo = $('#cboAno option');
         $.map(combo, function (opt, i) {
