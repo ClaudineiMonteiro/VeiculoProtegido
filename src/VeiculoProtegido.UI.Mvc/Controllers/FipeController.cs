@@ -60,7 +60,7 @@ namespace VeiculoProtegido.UI.Mvc.Controllers
 			if (response.IsSuccessStatusCode)
 			{
 				var marcaUri = response.Headers.Location;
-				var marcasModelos = response.Content.ReadAsAsync<ModeloAno>().Result;
+				var marcasModelos = response.Content.ReadAsAsync<IEnumerable<MarcaModeloAno>>().Result;
 				return Json(marcasModelos, JsonRequestBehavior.AllowGet);
 			}
 			else
