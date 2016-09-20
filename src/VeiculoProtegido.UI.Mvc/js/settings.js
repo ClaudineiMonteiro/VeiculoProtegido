@@ -23,19 +23,17 @@ $(function(){
         },
 
         screens: {
-            'xs-max': 543,
-            'sm-min': 544,
-            'sm-max': 767,
-            'md-min': 768,
-            'md-max': 991,
-            'lg-min': 992,
-            'lg-max': 1199,
-            'xl-min': 1200
+            'xs-max': 767,
+            'sm-min': 768,
+            'sm-max': 991,
+            'md-min': 992,
+            'md-max': 1199,
+            'lg-min': 1200
         },
 
         isScreen: function(size){
             var screenPx = window.innerWidth;
-            return (screenPx >= this.screens[size + '-min'] || size == 'xs') && (screenPx <= this.screens[size + '-max'] || size == 'xl');
+            return (screenPx >= this.screens[size + '-min'] || size == 'xs') && (screenPx <= this.screens[size + '-max'] || size == 'lg');
         },
 
         getScreenSize: function(){
@@ -43,8 +41,7 @@ $(function(){
             if (screenPx <= this.screens['xs-max']) return 'xs';
             if ((screenPx >= this.screens['sm-min']) && (screenPx <= this.screens['sm-max'])) return 'sm';
             if ((screenPx >= this.screens['md-min']) && (screenPx <= this.screens['md-max'])) return 'md';
-            if ((screenPx >= this.screens['lg-min']) && (screenPx <= this.screens['lg-max'])) return 'lg';
-            if (screenPx >= this.screens['xl-min']) return 'xl';
+            if (screenPx >= this.screens['lg-min']) return 'lg';
         },
 
         //credit http://stackoverflow.com/questions/1507931/generate-lighter-darker-color-in-css-using-javascript

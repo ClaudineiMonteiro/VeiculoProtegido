@@ -46,8 +46,7 @@ $(function(){
             xs:{enter:[], exit:[]},
             sm:{enter:[], exit:[]},
             md:{enter:[], exit:[]},
-            lg:{enter:[], exit:[]},
-            xl:{enter:[], exit:[]}
+            lg:{enter:[], exit:[]}
         };
         this.loading = false;
 
@@ -65,7 +64,7 @@ $(function(){
         ('ontouchstart' in window) && this.$content.swipe({
             swipeLeft: $.proxy(this._contentSwipeLeft, this),
             swipeRight: $.proxy(this._contentSwipeRight, this),
-            threshold: Sing.isScreen('sm') ? 100 : 200
+            threshold: Sing.isScreen('xs') ? 100 : 200
         });
 
         this.checkNavigationState();
@@ -179,11 +178,11 @@ $(function(){
     SingAppView.prototype.checkNavigationState = function(){
         if (this.isNavigationStatic()){
             this.staticNavigationState();
-            if (Sing.isScreen('md') || Sing.isScreen('sm') || Sing.isScreen('xs')){
+            if (Sing.isScreen('sm') || Sing.isScreen('xs')){
                 this.collapseNavigation();
             }
         } else {
-            if (Sing.isScreen('lg') || Sing.isScreen('xl')){
+            if (Sing.isScreen('md') || Sing.isScreen('lg')){
                 var view = this;
                 setTimeout(function(){
                     view.collapseNavigation();
@@ -207,7 +206,7 @@ $(function(){
 
     SingAppView.prototype.collapseNavigation = function(){
         //this method only makes sense for non-static navigation state
-        if (this.isNavigationStatic() && (Sing.isScreen('lg') || Sing.isScreen('xl'))) return;
+        if (this.isNavigationStatic() && (Sing.isScreen('md') || Sing.isScreen('lg'))) return;
 
         $('body').addClass('nav-collapsed');
         this.$sidebar.find('.collapse.in').collapse('hide')
@@ -216,7 +215,7 @@ $(function(){
 
     SingAppView.prototype.expandNavigation = function(){
         //this method only makes sense for non-static navigation state
-        if (this.isNavigationStatic() && (Sing.isScreen('lg') || Sing.isScreen('xl'))) return;
+        if (this.isNavigationStatic() && (Sing.isScreen('md') || Sing.isScreen('lg'))) return;
 
         $('body').removeClass('nav-collapsed');
         this.$sidebar.find('.active .active').closest('.collapse').collapse('show')
@@ -224,19 +223,19 @@ $(function(){
     };
 
     SingAppView.prototype._sidebarMouseEnter = function(){
-        if (Sing.isScreen('lg') || Sing.isScreen('xl')){
+        if (Sing.isScreen('md') || Sing.isScreen('lg')){
             this.expandNavigation();
         }
     };
 
     SingAppView.prototype._sidebarMouseLeave = function(){
-        if (Sing.isScreen('lg') || Sing.isScreen('xl')){
+        if (Sing.isScreen('md') || Sing.isScreen('lg')){
             this.collapseNavigation();
         }
     };
 
     SingAppView.prototype._collapseNavIfSmallScreen = function(){
-        if (Sing.isScreen('xs') || Sing.isScreen('sm') || Sing.isScreen('md')){
+        if (Sing.isScreen('xs') || Sing.isScreen('sm')){
             this.collapseNavigation();
         }
     };
@@ -304,12 +303,12 @@ $(function(){
     };
 
     /**
-     * Checks whether screen is md or lg and closes navigation if opened
+     * Checks whether screen is sm or md and closes navigation if opened
      * @private
      */
     SingAppView.prototype._contentSwipeLeft = function(){
         //this method only makes sense for small screens + ipad
-        if (Sing.isScreen('xl')) return;
+        if (Sing.isScreen('lg')) return;
 
         if (!$('body').is('.nav-collapsed')){
             this.collapseNavigation();
@@ -317,12 +316,12 @@ $(function(){
     };
 
     /**
-     * Checks whether screen is md or lg and opens navigation if closed
+     * Checks whether screen is sm or md and opens navigation if closed
      * @private
      */
     SingAppView.prototype._contentSwipeRight = function(){
         //this method only makes sense for small screens + ipad
-        if (Sing.isScreen('xl')) return;
+        if (Sing.isScreen('lg')) return;
 
         // fixme. this check is bad. I know. breaks loose coupling principle
         // SingApp should not know about some "strange" sidebar chat.
@@ -348,7 +347,7 @@ $(function(){
         clearTimeout(this.showLoaderTimeout);
         this.$loaderWrap.addClass('hiding');
         var view = this;
-        this.$loaderWrap.one(Util.TRANSITION_END, function () {
+        this.$loaderWrap.one($.support.transition.end, function () {
             view.$loaderWrap.addClass('hide');
         }).emulateTransitionEnd(200)
     };
@@ -381,21 +380,13 @@ $(function(){
     /**
      * Specify a function to execute when window entered/exited particular size.
      * Page independent. Runs regardless of current page (on every page).
-     * @param size ('xs','sm','md','lg','xl')
+     * @param size ('xs','sm','md','lg')
      * @param fn callback(newScreenSize, prevScreenSize)
      * @param onEnter whether to run a callback when screen enters `size` or exits. true by default @optional
      */
     SingAppView.prototype.onScreenSize = function(size, fn, /**Boolean=*/ onEnter){
         onEnter = typeof onEnter !== 'undefined' ? onEnter : true;
-        if (typeof size === 'object'){
-            for (var i=0; i < size.length; i++){
-                this.screenSizeCallbacks[size[i]][onEnter ? 'enter' : 'exit'].push(fn)
-            }
-        }
-        else {
-            this.screenSizeCallbacks[size][onEnter ? 'enter' : 'exit'].push(fn)
-        }
-
+        this.screenSizeCallbacks[size][onEnter ? 'enter' : 'exit'].push(fn)
     };
 
     /**
@@ -616,7 +607,7 @@ function initAppPlugins(){
 
         $.fn.animateProgressBar = function () {
             return this.each(function () {
-                var $bar = $(this);
+                var $bar = $(this).find('.progress-bar');
                 setTimeout(function(){
                     $bar.css('width', $bar.data('width'));
                 }, 0)
@@ -624,43 +615,6 @@ function initAppPlugins(){
         };
 
         $('.js-progress-animate').animateProgressBar();
-    }(jQuery);
-
-    /* ========================================================================
-     * Reposition Tooltip
-     * ========================================================================
-     */
-    !function($){
-        $.fn.onPositionChanged = function (trigger, millis) {
-            if (millis == null) millis = 100;
-            var o = $(this[0]); // our jquery object
-            if (o.length < 1) return o;
-
-            var lastPos = null;
-            var lastOff = null;
-            setInterval(function () {
-                if (o == null || o.length < 1) return o; // abort if element is non existend eny more
-                if (lastPos == null) lastPos = o.position();
-                if (lastOff == null) lastOff = o.offset();
-                var newPos = o.position();
-                var newOff = o.offset();
-                if (lastPos.top != newPos.top || lastPos.left != newPos.left) {
-                    $(this).trigger('onPositionChanged', { lastPos: lastPos, newPos: newPos });
-                    if (typeof (trigger) == "function") trigger(lastPos, newPos);
-                    lastPos = o.position();
-                }
-                if (lastOff.top != newOff.top || lastOff.left != newOff.left) {
-                    $(this).trigger('onOffsetChanged', { lastOff: lastOff, newOff: newOff});
-                    if (typeof (trigger) == "function") trigger(lastOff, newOff);
-                    lastOff= o.offset();
-                }
-            }, millis);
-
-            return o;
-        };
-
-        $('#nav-state-toggle').onPositionChanged(function(){Tether.position();},0);
-        $('#nav-collapse-toggle').onPositionChanged(function(){Tether.position();},0);
     }(jQuery);
 }
 
@@ -681,8 +635,8 @@ function initAppFunctions(){
         });
 
         /**
-         * Move notifications dropdown to sidebar when/if screen goes sm
-         * and back when leaves sm
+         * Move notifications dropdown to sidebar when/if screen goes xs
+         * and back when leaves xs
          */
         function moveNotificationsDropdown(){
             $('.sidebar-status .dropdown-toggle').after($('#notifications-dropdown-menu').detach());
@@ -691,11 +645,9 @@ function initAppFunctions(){
         function moveBackNotificationsDropdown(){
             $('#notifications-dropdown-toggle').after($('#notifications-dropdown-menu').detach());
         }
+        SingApp.onScreenSize('xs', moveNotificationsDropdown);
+        SingApp.onScreenSize('xs', moveBackNotificationsDropdown, false);
 
-        SingApp.onScreenSize(['sm','xs'], moveNotificationsDropdown);
-        SingApp.onScreenSize(['sm','xs'], moveBackNotificationsDropdown, false);
-
-        Sing.isScreen('sm') && moveNotificationsDropdown();
         Sing.isScreen('xs') && moveNotificationsDropdown();
 
         /**
@@ -775,7 +727,7 @@ function initAppFunctions(){
                     // .content making this hack with temporary class which will be
                     // used by SingApp to check whether it is permitted to open navigation
                     // on swipeRight
-                    .addClass('chat-sidebar-closing').one(Util.TRANSITION_END, function () {
+                    .addClass('chat-sidebar-closing').one($.support.transition.end, function () {
                         $('body').removeClass('chat-sidebar-closing');
                     }).emulateTransitionEnd(300);
             }
@@ -785,7 +737,7 @@ function initAppFunctions(){
             var $this = $(this),
                 $target = $($this.attr('href')),
                 $targetTitle = $target.find('.title');
-            $this.removeClass('active').find('.label').remove();
+            $this.removeClass('active').find('.badge').remove();
             $target.addClass('open');
             $('.chat-sidebar-contacts').removeClass('open');
             $('.chat-sidebar-footer').addClass('open');
@@ -885,7 +837,7 @@ function initDemoFunctions(){
         $('[data-toggle="chat-sidebar"]').one('click', function(){
             setTimeout(function(){
                 $('.chat-sidebar-user-group:first-of-type .list-group-item:first-child').addClass('active')
-                    .find('.fa-circle').after('<span class="label label-pill label-danger pull-xs-right animated bounceInDown">3</span>');
+                    .find('.fa-circle').after('<span class="badge badge-danger pull-right animated bounceInDown">3</span>');
             }, 1000)
         });
 

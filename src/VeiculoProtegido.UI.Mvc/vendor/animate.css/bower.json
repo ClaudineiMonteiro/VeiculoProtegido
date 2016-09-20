@@ -3,7 +3,7 @@
   "main": "./animate.css",
   "ignore": [
     ".*",
-    "source",
+    "src",
     "*.yml",
     "Gemfile",
     "Gemfile.lock",

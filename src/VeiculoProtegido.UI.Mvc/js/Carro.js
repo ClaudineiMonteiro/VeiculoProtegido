@@ -1,16 +1,13 @@
-﻿$(function () {
-    $("#cboMarca").change(function ()
-    {
+$(function () {
+    $("#cboMarca").change(function () {
         $('#cboModelo').empty().append('<option value="-1">Carregando...</option>');
         $('#cboAno').empty().append('<option value="-1">Carregando...</option>');
         var marcaId = $(this).val();
         var actionUrl = './RetornarModelos/?marcaId=' + marcaId;
-        $.getJSON(actionUrl, function (data)
-        {
+        $.getJSON(actionUrl, function (data) {
             $('#cboModelo').empty();
             $('#cboAno').empty();
-            $(data.modelos).each(function (key, val)
-            {
+            $(data.modelos).each(function (key, val) {
                 $('#cboModelo').append('<option value="' + val.codigo + '">' + val.nome + '</option>');
             });
             $(data.anos).each(function (key, val) {

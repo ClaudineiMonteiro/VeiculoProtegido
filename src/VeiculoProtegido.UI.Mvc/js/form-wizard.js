@@ -59,7 +59,7 @@ $(function(){
                 var $current = index + 1;
                 var $percent = ($current/$total) * 100;
                 var $wizard = $("#wizard");
-                $wizard.find('#bar').css({width: $percent + '%'});
+                $wizard.find('.progress-bar').css({width: $percent + '%'});
 
                 if($current >= $total) {
                     $wizard.find('.pager .next').hide();
@@ -158,7 +158,7 @@ $(function(){
 
         wizard.on("reset", function() {
             wizard.modal.find(':input').val('').removeAttr('disabled');
-            wizard.modal.find('.form-group').removeClass('has-error').removeClass('has-success');
+            wizard.modal.find('.form-group').removeClass('has-error').removeClass('has-succes');
             wizard.modal.find('#fqdn').data('is-valid', 0).data('lookup', 0);
         });
 
@@ -193,10 +193,8 @@ $(function(){
             wizard.reset();
         });
 
-        wizard.el.find('.wizard-progress-container').empty()
-            .append('<div class="bg-gray-lighter"><progress class="progress progress-primary progress-xs" style="width: 0%" value="100" max="100"></progress></div>');
-
-        wizard.progress = wizard.modal.find('progress');
+        wizard.el.find('.wizard-progress-container .progress').removeClass('progress-striped')
+            .addClass('progress-xs');
 
         $(".wizard-group-list").click(function() {
             alert("Disabled for demo.");
@@ -205,28 +203,6 @@ $(function(){
         $('#open-wizard').click(function(e) {
             e.preventDefault();
             wizard.show();
-            wizard.errorPopover = function(el, msg, allowHtml) {
-                this.log("launching popover on", el);
-                allowHtml = typeof allowHtml !== "undefined" ? allowHtml : false;
-                var popover = el.popover({
-                    content: msg,
-                    trigger: "manual",
-                    html: allowHtml,
-                    container: el.parents('.form-group')
-                }).addClass("error-popover").popover("show").next(".popover");
-
-                el.parents('.form-group').find('.popover').addClass("error-popover");
-                $('.popover-title').css('display', 'none');
-                $('.popover').addClass('popover-body-error');
-                $('.popover-content').addClass('popover-content-error');
-                $('.popover-arrow').addClass('popover-arrow-error');
-                Tether.position();
-
-                this.popovers.push(el);
-
-                return popover;
-            };
-            $('.dropdown-menu > li > a').addClass('dropdown-item');
         });
     }
     pageLoad();

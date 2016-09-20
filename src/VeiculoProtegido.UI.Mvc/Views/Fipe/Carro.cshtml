@@ -10,7 +10,7 @@
         </ol>
         <h1 class="page-title"><span class="fw-semi-bold">Carros e Utilitários Pequenos</span></h1>
         <div class="row">
-            <div class="col-lg-5">
+            <div class="col-lg-4 col-md-8">
                 <section class="widget">
                     <header>
                         <div class="widget-controls">
@@ -25,7 +25,7 @@
                                 <div class="row">
                                     <div class="col-md-8">
                                         <div class="form-group">
-                                            <label class="col-md-9 control-label" for="MarcaSelect">Selecione a Marca do Veiculo</label>
+                                            <label class="control-label" for="MarcaSelect">Selecione a Marca do Veiculo</label>
                                             <select id="cboMarca"
                                                     data-placeholder="Selecionar Veiculo"
                                                     class="select2 form-control"
@@ -40,7 +40,7 @@
                                     </div>
                                     <div class="col-md-8">
                                         <div class="form-group">
-                                            <label class="col-md-9 control-label" for="ModeloSelect">Selecione o Modelo do Veiculo</label>
+                                            <label class="control-label" for="ModeloSelect">Selecione o Modelo do Veiculo</label>
                                             <select id="cboModelo"
                                                     data-placeholder="Selecionar Modelo"
                                                     class="select2 form-control"
@@ -51,7 +51,7 @@
                                     </div>
                                     <div class="col-md-8">
                                         <div class="form-group">
-                                            <label class="col-md-10 control-label" for="AnoSelect">Selecione o Ano e Combustivel do Veiculo</label>
+                                            <label class="control-label" for="AnoSelect">Selecione o Ano e Combustivel do Veiculo</label>
                                             <select id="cboAno"
                                                     data-placeholder="Selecionar Ano/Combustivel"
                                                     class="select2 form-control"
@@ -75,7 +75,53 @@
                 </section>
             </div>
         </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <section class="widget">
+                    <header>
+                        <h4>
+                            Color <span class="fw-semi-bold">Options</span>
+                        </h4>
+                        <div class="widget-controls">
+                            <a data-widgster="expand" title="Expand" href="#"><i class="glyphicon glyphicon-chevron-up"></i></a>
+                            <a data-widgster="collapse" title="Collapse" href="#"><i class="glyphicon glyphicon-chevron-down"></i></a>
+                            <a href="#" data-widgster="close"><i class="glyphicon glyphicon-remove"></i></a>
+                        </div>
+                    </header>
+                    <div class="widget-body">
+                        <p class="fs-mini text-muted">
+                            Use any of the available button classes to quickly create a styled button.
+                            Semantically distinguishable beauty.
+                        </p>
+                    </div>
+                </section>
+            </div>
+        </div>
+
     </main>
 </div>
+<!-- The Loader. Is shown when pjax happens -->
+<div class="loader-wrap hiding hide">
+    <i class="fa fa-circle-o-notch fa-spin-fast"></i>
+</div>
+
+<!-- common app js -->
+<script src="~/js/settings.js"></script>
+<script src="~/js/app.js"></script>
+
+<!-- common libraries. required for every page-->
+<script src="~/vendor/jquery/dist/jquery.min.js"></script>
+<script src="~/vendor/jquery-pjax/jquery.pjax.js"></script>
+<script src="~/vendor/bootstrap-sass/assets/javascripts/bootstrap/transition.js"></script>
+<script src="~/vendor/bootstrap-sass/assets/javascripts/bootstrap/collapse.js"></script>
+<script src="~/vendor/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js"></script>
+<script src="~/vendor/bootstrap-sass/assets/javascripts/bootstrap/button.js"></script>
+<script src="~/vendor/bootstrap-sass/assets/javascripts/bootstrap/tooltip.js"></script>
+<script src="~/vendor/bootstrap-sass/assets/javascripts/bootstrap/alert.js"></script>
+<script src="~/vendor/slimScroll/jquery.slimscroll.min.js"></script>
+<script src="~/vendor/widgster/widgster.js"></script>
+<script src="~/vendor/pace.js/pace.js" data-pace-options='{ "target": ".content-wrap", "ghostTime": 1000 }'></script>
+<script src="~/vendor/jquery-touchswipe/jquery.touchSwipe.js"></script>
+
 <!-- page specific js -->
 <script src="~/js/carro.js"></script>
