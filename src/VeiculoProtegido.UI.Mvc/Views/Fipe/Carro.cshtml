@@ -20,38 +20,46 @@
                         </div>
                     </header>
                     <div class="widget-body">
-                        <form class="form-horizontal form-label-left" role="form">
+                        @*<form class="form-horizontal form-label-left" role="form">*@
+                        <form role="form">
                             <fieldset>
-                                <div class="form-group row">
-                                    <label class="col-md-4 control-label" for="MarcaSelect">Selecione a Marca do Veiculo</label>
+                                <div class="row">
                                     <div class="col-md-8">
-                                        <select id="cboMarca"
-                                                data-placeholder="Selecionar Veiculo"
-                                                class="select2 form-control"
-                                                tabindex="-1"
-                                                name="Marca">
-                                            <option value=""></option>
-                                            @foreach (var marca in Model)
-                                            {
-                                                <option value="@marca.codigo">@marca.nome</option>}
-                                        </select>
+                                        <div class="form-group">
+                                            <label class="col-md-9 control-label" for="MarcaSelect">Selecione a Marca do Veiculo</label>
+                                            <select id="cboMarca"
+                                                    data-placeholder="Selecionar Veiculo"
+                                                    class="select2 form-control"
+                                                    tabindex="-1"
+                                                    name="Marca">
+                                                <option value=""></option>
+                                                @foreach (var marca in Model)
+                                                {
+                                                    <option value="@marca.codigo">@marca.nome</option>}
+                                            </select>
+                                        </div>
                                     </div>
-                                    <label class="col-md-4 control-label" for="ModeloSelect">Selecione o Modelo do Veiculo</label>
                                     <div class="col-md-8">
-                                        <select id="cboModelo"
-                                                data-placeholder="Selecionar Modelo"
-                                                class="select2 form-control"
-                                                tabindex="-1"
-                                                name="Marca">
-                                        </select>
+                                        <div class="form-group">
+                                            <label class="col-md-9 control-label" for="ModeloSelect">Selecione o Modelo do Veiculo</label>
+                                            <select id="cboModelo"
+                                                    data-placeholder="Selecionar Modelo"
+                                                    class="select2 form-control"
+                                                    tabindex="-1"
+                                                    name="Marca">
+                                            </select>
+                                        </div>
                                     </div>
-                                    <label class="col-md-4 control-label" for="AnoSelect">Selecione o Ano e Combustivel do Veiculo</label>
                                     <div class="col-md-8">
-                                        <select id="cboAno"
-                                                data-placeholder="Selecionar Ano/Combustivel"
-                                                class="select2 form-control"
-                                                tabindex="-1"
-                                                name="Ano"></select>
+                                        <div class="form-group">
+                                            <label class="col-md-10 control-label" for="AnoSelect">Selecione o Ano e Combustivel do Veiculo</label>
+                                            <select id="cboAno"
+                                                    data-placeholder="Selecionar Ano/Combustivel"
+                                                    class="select2 form-control"
+                                                    tabindex="-1"
+                                                    name="Ano">
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
                             </fieldset>
