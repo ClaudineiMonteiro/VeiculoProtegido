@@ -28,4 +28,14 @@ $(function () {
             });
         });
     });
+
+    $("#btnConsultar").on("click", function () {
+        var marcaId = document.getElementById('cboMarca').value;
+        var modeloId = document.getElementById('cboModelo').value;
+        var anoId = document.getElementById('cboAno').value;
+        var actionUrl = './RetornarVeiculo/?marcaId=' + marcaId + '&modeloId=' + modeloId + '&anoId=' + anoId;
+        $.getJSON(actionUrl, function (data) {
+            $('.Valor').append("<h1>Valor: " + data.Valor + "</h1>");
+        });
+    });
 })
