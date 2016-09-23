@@ -35,7 +35,7 @@ $(function () {
         var anoId = document.getElementById('cboAno').value;
         var actionUrl = './RetornarVeiculo/?marcaId=' + marcaId + '&modeloId=' + modeloId + '&anoId=' + anoId;
         $.getJSON(actionUrl, function (data) {
-            $('.Valor').append("<h1>Valor: " + data.Valor + "</h1>");
+            document.getElementById('txtValor').value = data.Valor;
         });
     });
 })
