@@ -35,12 +35,12 @@ $(function () {
         var anoId = document.getElementById('cboAno').value;
         var actionUrl = './RetornarVeiculo/?marcaId=' + marcaId + '&modeloId=' + modeloId + '&anoId=' + anoId;
         $.getJSON(actionUrl, function (data) {
-            document.getElementById('txtMarca').innerHTML = data.Marca;
-            document.getElementById('txtModelo').innerHTML = data.Modelo;
-            document.getElementById('txtAno').innerHTML = data.AnoModelo;
-            document.getElementById('txtCombustivel').innerHTML = data.Combustivel;
-            document.getElementById('txtCodigoFipe').innerHTML = data.CodigoFipe;
-            document.getElementById('txtValor').innerHTML = data.Valor;
+            document.getElementById('txtMarca').value = data.Marca;
+            document.getElementById('txtModelo').value = data.Modelo;
+            document.getElementById('txtAno').value = data.AnoModelo;
+            document.getElementById('txtCombustivel').value = data.Combustivel;
+            document.getElementById('txtCodigoFipe').value = data.CodigoFipe;
+            document.getElementById('txtValor').value = data.Valor;
         });
     });
 })
