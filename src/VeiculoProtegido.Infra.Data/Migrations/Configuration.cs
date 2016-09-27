@@ -5,7 +5,7 @@ namespace VeiculoProtegido.Infra.Data.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<VeiculoProtegido.Infra.Data.Context.VeiculoProtegidoContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<Context.VeiculoProtegidoContext>
     {
         public Configuration()
         {

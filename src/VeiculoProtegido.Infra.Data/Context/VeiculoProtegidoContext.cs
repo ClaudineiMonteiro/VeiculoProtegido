@@ -2,13 +2,14 @@
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
+using VeiculoProtegido.Infra.Data.EntityConfig;
 
 namespace VeiculoProtegido.Infra.Data.Context
 {
 	public class VeiculoProtegidoContext : DbContext
 	{
 		public VeiculoProtegidoContext()
-			: base("DefaultConnection")
+			: base("VeiculoProtegidoConnection")
 		{
 		}
 
@@ -27,6 +28,9 @@ namespace VeiculoProtegido.Infra.Data.Context
 
 			modelBuilder.Properties<string>()
 				.Configure(p => p.HasMaxLength(100));
+
+			modelBuilder.Configurations.Add(new TabelaPrecoConfig());
+			modelBuilder.Configurations.Add(new FaixaTabelaPrecoConfig());
 
 			base.OnModelCreating(modelBuilder);
 		}
