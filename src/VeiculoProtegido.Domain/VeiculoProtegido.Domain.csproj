@@ -47,11 +47,11 @@
     <Compile Include="Interfaces\Repository\IFaixaTabelaPrecoRepository.cs" />
     <Compile Include="Interfaces\Repository\IRepository.cs" />
     <Compile Include="Interfaces\Repository\ITabelaPrecoRepository.cs" />
+    <Compile Include="Interfaces\Service\ITabelaPrecoService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Validations\Documentos\CPFValidation.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Interfaces\Service\" />
     <Folder Include="Services\" />
     <Folder Include="Specifications\Empresas\" />
     <Folder Include="Validations\Empresas\" />
