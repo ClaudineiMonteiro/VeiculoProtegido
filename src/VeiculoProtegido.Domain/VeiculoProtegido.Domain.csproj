@@ -44,7 +44,9 @@
     <Compile Include="Entities\PrecoFIPE.cs" />
     <Compile Include="Entities\TabelaPreco.cs" />
     <Compile Include="Entities\Veiculo.cs" />
+    <Compile Include="Interfaces\Repository\IFaixaTabelaPrecoRepository.cs" />
     <Compile Include="Interfaces\Repository\IRepository.cs" />
+    <Compile Include="Interfaces\Repository\ITabelaPrecoRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Validations\Documentos\CPFValidation.cs" />
   </ItemGroup>
