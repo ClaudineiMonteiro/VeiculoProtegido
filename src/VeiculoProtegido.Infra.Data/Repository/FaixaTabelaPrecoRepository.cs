@@ -12,7 +12,7 @@ namespace VeiculoProtegido.Infra.Data.Repository
 		public FaixaTabelaPrecoRepository(VeiculoProtegidoContext context) : base(context) {}
 		#endregion
 
-		public FaixaTabelaPreco GetByPlano(byte planoId)
+		public FaixaTabelaPreco GetByPlanoId(byte planoId)
 		{
 			return Search(s => s.PlanoId.Equals(planoId)).FirstOrDefault();
 		}

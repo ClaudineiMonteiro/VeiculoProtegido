@@ -49,10 +49,14 @@
     <Compile Include="Interfaces\Repository\ITabelaPrecoRepository.cs" />
     <Compile Include="Interfaces\Service\ITabelaPrecoService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\TabelaPrecoService.cs" />
+    <Compile Include="Specifications\TabelaPreco\TabelaPrecoDescricaoNotNullSpecification.cs" />
+    <Compile Include="Specifications\TabelaPreco\TabelaPrecoMustHaveDescricaoSingleSpecification.cs" />
     <Compile Include="Validations\Documentos\CPFValidation.cs" />
+    <Compile Include="Validations\TabelaPreco\TabelaPrecoFitToRegisterValidation.cs" />
+    <Compile Include="Validations\TabelaPreco\TabelaPrecoThisConsistentValidation.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Services\" />
     <Folder Include="Specifications\Empresas\" />
     <Folder Include="Validations\Empresas\" />
   </ItemGroup>
