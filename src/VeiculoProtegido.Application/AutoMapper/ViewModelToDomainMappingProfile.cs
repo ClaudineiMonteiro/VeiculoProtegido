@@ -8,9 +8,10 @@ namespace VeiculoProtegido.Application.AutoMapper
 	{
 		protected override void Configure()
 		{
-			CreateMap<VeiculoViewModel, Veiculo>();
-			CreateMap<VeiculoViewModel, Modelo>();
-			CreateMap<MarcaViewModel, Marca>();
+			CreateMap<TabelaPrecoViewModel, TabelaPreco>();
+			CreateMap<TabelaPrecoFaixaTabelaPrecoViewModel, TabelaPreco>();
+			CreateMap<FaixaTabelaPrecoViewModel, FaixaTabelaPreco>();
+			CreateMap<TabelaPrecoFaixaTabelaPrecoViewModel, FaixaTabelaPreco>();
 		}
 	}
 }
