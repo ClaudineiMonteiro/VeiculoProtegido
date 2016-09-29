@@ -54,9 +54,12 @@
     <Compile Include="AutoMapper\ViewModelToDomainMappingProfile.cs" />
     <Compile Include="Interfaces\IMarcaAppService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\FaixaTabelaPrecoViewModel.cs" />
     <Compile Include="ViewModels\MarcaViewModel.cs" />
     <Compile Include="ViewModels\ModeloViewModel.cs" />
     <Compile Include="ViewModels\PrecoFIPEViewModel.cs" />
+    <Compile Include="ViewModels\TabelaPrecoFaixaTabelaPrecoViewModel.cs" />
+    <Compile Include="ViewModels\TabelaPrecoViewModel.cs" />
     <Compile Include="ViewModels\VeiculoViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
