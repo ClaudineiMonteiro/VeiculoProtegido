@@ -22,7 +22,6 @@ namespace VeiculoProtegido.Application.ViewModels
 
 		[Required(ErrorMessage = "Preencha o campo Tipo FIPE")]
 		public byte TipoFipe { get; set; }
-		//public virtual ICollection<FaixaTabelaPreco> FaixasTabelaPreco { get; set; }
 		[ScaffoldColumn(false)]
 		public DateTime DataHoraCadastro { get; set; }
 		[ScaffoldColumn(false)]
