@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using VeiculoProtegido.Application.Interfaces;
 using VeiculoProtegido.Application.ViewModels;
@@ -40,12 +39,17 @@ namespace VeiculoProtegido.Application
 
 		public FaixaTabelaPrecoViewModel AddFaixaTabelaPreco(FaixaTabelaPrecoViewModel faixaTabelaPrecoViewModel)
 		{
-			throw new NotImplementedException();
+			var faixaTabelaPreco = Mapper.Map<FaixaTabelaPrecoViewModel, FaixaTabelaPreco>(faixaTabelaPrecoViewModel);
+			BeginTransaction();
+			_tabelaPrecoService.AddFaixaTabelaPreco(faixaTabelaPreco);
+			Commit();
+			return faixaTabelaPrecoViewModel;
 		}
 
 		public void Dispose()
 		{
-			throw new NotImplementedException();
+			_tabelaPrecoService.Dispose();
+			GC.SuppressFinalize(this);
 		}
 
 		public IEnumerable<TabelaPrecoViewModel> GetAll()
