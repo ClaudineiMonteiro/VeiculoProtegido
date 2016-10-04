@@ -1,4 +1,6 @@
 ﻿using SimpleInjector;
+using VeiculoProtegido.Application;
+using VeiculoProtegido.Application.Interfaces;
 using VeiculoProtegido.Domain.Interfaces.Repository;
 using VeiculoProtegido.Domain.Interfaces.Service;
 using VeiculoProtegido.Domain.Services;
@@ -13,6 +15,9 @@ namespace VeiculoProtegido.Infra.CrossCutting.IoC
 	{
 		public static void RegisterServices(Container container)
 		{
+			//App
+			container.RegisterPerWebRequest<ITabelaPrecoAppService, TabelaPrecoAppService>();
+
 			//Domain
 			container.RegisterPerWebRequest<ITabelaPrecoService, TabelaPrecoService>();
 

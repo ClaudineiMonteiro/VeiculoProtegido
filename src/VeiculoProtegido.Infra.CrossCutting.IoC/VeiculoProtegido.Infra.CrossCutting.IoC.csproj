@@ -72,6 +72,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\VeiculoProtegido.Application\VeiculoProtegido.Application.csproj">
+      <Project>{58C0AA55-D516-44A8-83D5-A5186627FB85}</Project>
+      <Name>VeiculoProtegido.Application</Name>
+    </ProjectReference>
     <ProjectReference Include="..\VeiculoProtegido.Domain\VeiculoProtegido.Domain.csproj">
       <Project>{69ffaa45-fe3a-481f-a83c-471443c71b3f}</Project>
       <Name>VeiculoProtegido.Domain</Name>
