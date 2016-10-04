@@ -128,7 +128,69 @@ namespace VeiculoProtegido.UI.Mvc.Controllers
 			return RedirectToAction("Index");
 		}
 
-        protected override void Dispose(bool disposing)
+		public ActionResult ListFaixaTabelaPreco(Guid id)
+		{
+			ViewBag.TabelaPrecoId = id;
+			return PartialView("_FaixaTabelaPreco", _tabelaPrecoAppService.GetById(id).FaixasTabelaPreco);
+		}
+
+		public ActionResult AddFaixaTabelaPreco(Guid id)
+		{
+			ViewBag.TabelaPrecoId = id;
+			return PartialView("_FaixatabelaPrecoAdd");
+		}
+
+		public ActionResult AddFaixaTabelaPreco(FaixaTabelaPrecoViewModel faixaTabelaPrecoViewModel)
+		{
+			if (ModelState.IsValid)
+			{
+				_tabelaPrecoAppService.AddFaixaTabelaPreco(faixaTabelaPrecoViewModel);
+				string url = Url.Action("ListFaixaTabelaPreco", "TabelaPreco", new { id = faixaTabelaPrecoViewModel.TabelaPrecoId });
+				return Json(new { success = true, url = url });
+			}
+			return PartialView("_FaixatabelaPrecoAdd");
+		}
+
+		public ActionResult UpdateFaixaTabelaPreco(Guid id)
+		{
+			return PartialView("_FaixaTabelaPrecoUpdate", _tabelaPrecoAppService.GetByIdFaixaTabelaPreco(id));
+		}
+
+		public ActionResult UpdateFaixaTabelaPreco(FaixaTabelaPrecoViewModel faixaTabelaPrecoViewModel)
+		{
+			if (ModelState.IsValid)
+			{
+				_tabelaPrecoAppService.UpdateFaixaTabelaPreco(faixaTabelaPrecoViewModel);
+				string url = Url.Action("_FaixaTabelaPrecoList", "TabelaPreco", new { id = faixaTabelaPrecoViewModel.TabelaPrecoId });
+				return Json(new { success = true, url = url });
+			}
+			return PartialView("_FaixaTabelaPrecoUpdate", faixaTabelaPrecoViewModel);
+		}
+
+		public ActionResult DeleteFaixaTabelaPreco(Guid id)
+		{
+			if (id == null)
+			{
+				return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+			}
+			var faixaTabelaPrecoViewModel = _tabelaPrecoAppService.GetByIdFaixaTabelaPreco(id);
+			if (faixaTabelaPrecoViewModel == null)
+			{
+				return HttpNotFound();
+			}
+			return PartialView("_FaixaTabelaPrecoDelete", faixaTabelaPrecoViewModel);
+		}
+
+		public ActionResult DeletarFaixaTAbelaPreco(Guid id)
+		{
+			var tabelaPrecoId = _tabelaPrecoAppService.GetByIdFaixaTabelaPreco(id).TabelaPrecoId;
+			_tabelaPrecoAppService.RemoveFaixaTabelaPreco(id);
+
+			string url = Url.Action("_FaixaTabelaPrecoList", "TabelasPreco", new { id = tabelaPrecoId });
+			return Json(new { success = true, url = url });
+		}
+
+		protected override void Dispose(bool disposing)
         {
 			if (disposing)
 			{
