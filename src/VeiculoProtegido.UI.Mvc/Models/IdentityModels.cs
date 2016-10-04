@@ -29,5 +29,6 @@ namespace VeiculoProtegido.UI.Mvc.Models
         {
             return new ApplicationDbContext();
         }
-    }
+
+	}
 }

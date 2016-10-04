@@ -191,6 +191,7 @@
     <Compile Include="Controllers\FipeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\TabelasPrecoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -5709,7 +5710,7 @@
       <Name>VeiculoProtegido.Application</Name>
     </ProjectReference>
     <ProjectReference Include="..\VeiculoProtegido.Domain\VeiculoProtegido.Domain.csproj">
-      <Project>{69FFAA45-FE3A-481F-A83C-471443C71B3F}</Project>
+      <Project>{69ffaa45-fe3a-481f-a83c-471443c71b3f}</Project>
       <Name>VeiculoProtegido.Domain</Name>
     </ProjectReference>
     <ProjectReference Include="..\VeiculoProtegido.Infra.CrossCutting.IoC\VeiculoProtegido.Infra.CrossCutting.IoC.csproj">
@@ -5752,6 +5753,21 @@
     <Content Include="sass\_utils.scss" />
     <Content Include="sass\_variables.scss" />
     <Content Include="sass\_widgets.scss" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\TabelasPreco\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\TabelasPreco\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\TabelasPreco\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\TabelasPreco\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\TabelasPreco\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

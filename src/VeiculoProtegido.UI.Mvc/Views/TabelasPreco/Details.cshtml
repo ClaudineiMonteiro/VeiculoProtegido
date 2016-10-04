@@ -1,0 +1,34 @@
+﻿@model VeiculoProtegido.Application.ViewModels.TabelaPrecoViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TabelaPrecoViewModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descricao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoFipe)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoFipe)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TabelaPrecoId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
