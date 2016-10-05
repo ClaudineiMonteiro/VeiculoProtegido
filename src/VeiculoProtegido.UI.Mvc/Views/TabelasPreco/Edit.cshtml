@@ -6,62 +6,80 @@
 
 
 @Html.AntiForgeryToken()
-    
-<div class="form-horizontal">
-    <h4>TabelaPrecoViewModel</h4>
-    <hr />
-    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-    @Html.HiddenFor(model => model.TabelaPrecoId)
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.Descricao, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.Descricao, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.Descricao, "", new { @class = "text-danger" })
-        </div>
-    </div>
+<div class="content-wrap">
+    <main id="content" class="content" role="main">
+        <ol class="breadcrumb">
+            <li>Cadastro</li>
+        </ol>
+        <h1 class="page-title"><span class="fw-semi-bold">Tabelas de Preço</span></h1>
+        <div class="col-md-6">
+            <section class="widget">
+                <header>
+                    <div class="widget-controls">
+                        <a href="#"><i class="glyphicon glyphicon-cog"></i></a>
+                        <a data-widgster="close" href="#"><i class="glyphicon glyphicon-remove"></i></a>
+                    </div>
+                </header>
+                <div class="widget-body">
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.TipoFipe, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.TipoFipe, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.TipoFipe, "", new { @class = "text-danger" })
-        </div>
-    </div>
+                    <h4>TabelaPrecoViewModel</h4>
+                    <hr />
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    @Html.HiddenFor(model => model.TabelaPrecoId)
 
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Save" class="btn btn-default" />
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Descricao, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Descricao, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Descricao, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.TipoFipe, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.TipoFipe, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.TipoFipe, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Save" class="btn btn-default" />
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    @Html.ActionLink("Back to List", "Index")
+                </div>
+            </section>
         </div>
-    </div>
+    </main>
 </div>
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
-
 <!-- The Loader. Is shown when pjax happens -->
 <div class="loader-wrap hiding hide">
     <i class="fa fa-circle-o-notch fa-spin-fast"></i>
 </div>
 
-<!-- common app js -->
-<script src="~/js/settings.js"></script>
-<script src="~/js/app.js"></script>
+@*<!-- common app js -->
+    <script src="~/js/settings.js"></script>
+    <script src="~/js/app.js"></script>
 
-<!-- common libraries. required for every page-->
-<script src="~/vendor/jquery/dist/jquery.min.js"></script>
-<script src="~/vendor/jquery-pjax/jquery.pjax.js"></script>
-<script src="~/vendor/bootstrap-sass/assets/javascripts/bootstrap/transition.js"></script>
-<script src="~/vendor/bootstrap-sass/assets/javascripts/bootstrap/collapse.js"></script>
-<script src="~/vendor/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js"></script>
-<script src="~/vendor/bootstrap-sass/assets/javascripts/bootstrap/button.js"></script>
-<script src="~/vendor/bootstrap-sass/assets/javascripts/bootstrap/tooltip.js"></script>
-<script src="~/vendor/bootstrap-sass/assets/javascripts/bootstrap/alert.js"></script>
-<script src="~/vendor/slimScroll/jquery.slimscroll.min.js"></script>
-<script src="~/vendor/widgster/widgster.js"></script>
-<script src="~/vendor/pace.js/pace.js" data-pace-options='{ "target": ".content-wrap", "ghostTime": 1000 }'></script>
-<script src="~/vendor/jquery-touchswipe/jquery.touchSwipe.js"></script>
+    <!-- common libraries. required for every page-->
+    <script src="~/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="~/vendor/jquery-pjax/jquery.pjax.js"></script>
+    <script src="~/vendor/bootstrap-sass/assets/javascripts/bootstrap/transition.js"></script>
+    <script src="~/vendor/bootstrap-sass/assets/javascripts/bootstrap/collapse.js"></script>
+    <script src="~/vendor/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js"></script>
+    <script src="~/vendor/bootstrap-sass/assets/javascripts/bootstrap/button.js"></script>
+    <script src="~/vendor/bootstrap-sass/assets/javascripts/bootstrap/tooltip.js"></script>
+    <script src="~/vendor/bootstrap-sass/assets/javascripts/bootstrap/alert.js"></script>
+    <script src="~/vendor/slimScroll/jquery.slimscroll.min.js"></script>
+    <script src="~/vendor/widgster/widgster.js"></script>
+    <script src="~/vendor/pace.js/pace.js" data-pace-options='{ "target": ".content-wrap", "ghostTime": 1000 }'></script>
+    <script src="~/vendor/jquery-touchswipe/jquery.touchSwipe.js"></script>*@
 
 <!-- page specific js -->
 @*<script src="~/js/carro.js"></script>*@
