@@ -4,36 +4,92 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<div class="content-wrap">
+    <main id="content" class="content" role="main">
+        <ol class="breadcrumb">
+            <li>Cadastro</li>
+        </ol>
+        <h1 class="page-title"><span class="fw-semi-bold">Tabelas de Preço</span></h1>
+        <div class="col-md-6">
+            <section class="widget">
+                <header>
+                    <div class="widget-controls">
+                        <a href="#"><i class="glyphicon glyphicon-cog"></i></a>
+                        <a data-widgster="close" href="#"><i class="glyphicon glyphicon-remove"></i></a>
+                    </div>
+                </header>
+                <div class="widget-body">
+                    <table class="table table-bordered table-lg mt-lg mb-0">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <div class="checkbox">
+                                        <input id="checkbox10" type="checkbox" data-check-all>
+                                        <label for="checkbox10"></label>
+                                    </div>
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Descricao)
+                                </th>
+                                <th class="text-align-right">
+                                    @Html.DisplayNameFor(model => model.TipoFipe)
+                                </th>
+                                <th class="text-align-center">Ações</th>
+                            </tr>
+                        </thead>
+                        @foreach (var item in Model)
+                        {
+                            <tbody>
+                            <tr>
+                                <td>
+                                    <div class="checkbox">
+                                        <input id="checkbox11" type="checkbox" data-check-all>
+                                        <label for="checkbox11"></label>
+                                    </div>
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Descricao)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TipoFipe)
+                                </td>
+                                <td>
+                                    <a href="@Url.Action("Edit", "TabelasPreco", new {id = item.TabelaPrecoId})" class="btn btn-default"><span title="Editar" class="glyphicon glyphicon-pencil"></span></a>
+                                    <a href="@Url.Action("Details", "TabelasPreco", new {id = item.TabelaPrecoId })" class="btn btn-default"><span title="Detalhes" class="glyphicon glyphicon-search"></span></a>
+                                    <a href="@Url.Action("Delete", "TabelasPreco", new {id = item.TabelaPrecoId })" class="btn btn-danger"><span title="Excluir" class="glyphicon glyphicon-trash"></span></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                        }
+                    </table>
+                </div>
+            </section>
+        </div>
+    </main>
+</div>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Descricao)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TipoFipe)
-        </th>
-        <th></th>
-    </tr>
+<!-- The Loader. Is shown when pjax happens -->
+<div class="loader-wrap hiding hide">
+    <i class="fa fa-circle-o-notch fa-spin-fast"></i>
+</div>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Descricao)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TipoFipe)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.TabelaPrecoId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.TabelaPrecoId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.TabelaPrecoId })
-        </td>
-    </tr>
-}
+<!-- common app js -->
+<script src="~/js/settings.js"></script>
+<script src="~/js/app.js"></script>
 
-</table>
+<!-- common libraries. required for every page-->
+<script src="~/vendor/jquery/dist/jquery.min.js"></script>
+<script src="~/vendor/jquery-pjax/jquery.pjax.js"></script>
+<script src="~/vendor/bootstrap-sass/assets/javascripts/bootstrap/transition.js"></script>
+<script src="~/vendor/bootstrap-sass/assets/javascripts/bootstrap/collapse.js"></script>
+<script src="~/vendor/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js"></script>
+<script src="~/vendor/bootstrap-sass/assets/javascripts/bootstrap/button.js"></script>
+<script src="~/vendor/bootstrap-sass/assets/javascripts/bootstrap/tooltip.js"></script>
+<script src="~/vendor/bootstrap-sass/assets/javascripts/bootstrap/alert.js"></script>
+<script src="~/vendor/slimScroll/jquery.slimscroll.min.js"></script>
+<script src="~/vendor/widgster/widgster.js"></script>
+<script src="~/vendor/pace.js/pace.js" data-pace-options='{ "target": ".content-wrap", "ghostTime": 1000 }'></script>
+<script src="~/vendor/jquery-touchswipe/jquery.touchSwipe.js"></script>
+
+<!-- page specific js -->
+@*<script src="~/js/carro.js"></script>*@
