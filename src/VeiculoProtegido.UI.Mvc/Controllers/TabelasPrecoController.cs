@@ -92,6 +92,7 @@ namespace VeiculoProtegido.UI.Mvc.Controllers
 		// POST: TabelasPreco/Edit/5
 		// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
 		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+		[Route("editar/{id:guid}")]
 		[HttpPost]
 		[ValidateAntiForgeryToken]
 		public ActionResult Edit(TabelaPrecoViewModel tabelaPrecoViewModel)

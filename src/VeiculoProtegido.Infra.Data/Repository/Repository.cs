@@ -58,12 +58,15 @@ namespace VeiculoProtegido.Infra.Data.Repository
 
 		public IEnumerable<TEntity> Search(Expression<Func<TEntity, bool>> predicate)
 		{
-			throw new NotImplementedException();
+			return DbSet.Where(predicate);
 		}
 
 		public TEntity Update(TEntity obj)
 		{
-			throw new NotImplementedException();
+			var entry = Db.Entry(obj);
+			DbSet.Attach(obj);
+			entry.State = EntityState.Modified;
+			return obj;
 		}
 		#endregion
 	}
