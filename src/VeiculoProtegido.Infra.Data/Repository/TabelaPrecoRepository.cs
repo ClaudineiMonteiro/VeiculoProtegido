@@ -30,7 +30,7 @@ namespace VeiculoProtegido.Infra.Data.Repository
 			var cn = Db.Database.Connection;
 			var sql = @"
 SELECT *
-  FROM TabelaPreco
+  FROM TabelaPrecos
 ";
 			return cn.Query<TabelaPreco>(sql);
 		}
@@ -40,8 +40,8 @@ SELECT *
 			var cn = Db.Database.Connection;
 			var sql = @"
 SELECT *
-  FROM TabelaPreco A
-       LEFT JOIN FaixaTabelaPreco B
+  FROM TabelaPrecos A
+       LEFT JOIN FaixaTabelaPrecos B
          ON B.TabelaPrecoId = A.TabelaPrecoId
  WHERE A.TabelaPrecoId = @sId";
 			var tabelaPreco = new List<TabelaPreco>();

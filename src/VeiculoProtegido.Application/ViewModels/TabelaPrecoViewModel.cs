@@ -22,10 +22,12 @@ namespace VeiculoProtegido.Application.ViewModels
 
 		[Required(ErrorMessage = "Preencha o campo Tipo FIPE")]
 		public byte TipoFipe { get; set; }
+
 		[ScaffoldColumn(false)]
 		public DateTime DataHoraCadastro { get; set; }
 		[ScaffoldColumn(false)]
 		public DateTime DataHoraUltimaAlteracao { get; set; }
+
 		public ICollection<FaixaTabelaPrecoViewModel> FaixasTabelaPreco { get; set; }
 		#endregion
 	}

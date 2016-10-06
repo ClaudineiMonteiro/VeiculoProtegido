@@ -20,7 +20,7 @@ namespace VeiculoProtegido.Infra.Data.EntityConfig
 				.IsRequired();
 			Property(p => p.ValorAdesao)
 				.IsRequired();
-			ToTable("FaixaTabelaPreco");
+			ToTable("FaixaTabelaPrecos");
 		}
 	}
 }
