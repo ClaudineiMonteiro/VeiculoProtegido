@@ -1,0 +1,64 @@
+﻿@model IEnumerable<VeiculoProtegido.Application.ViewModels.FaixaTabelaPrecoViewModel>
+
+@*<div class="content-wrap">*@
+    <main id="content" class="content" role="main">
+        <ol class="breadcrumb">
+            <li>Faixa</li>
+        </ol>
+        <h1 class="page-title"><span class="fw-semi-bold">Tabelas de Preço</span></h1>
+        <div class="col-md-6">
+            <section class="widget">
+                <header>
+                    <div class="widget-controls">
+                        <a href="#"><i class="glyphicon glyphicon-cog"></i></a>
+                        <a data-widgster="close" href="#"><i class="glyphicon glyphicon-remove"></i></a>
+                    </div>
+                </header>
+                <div class="widget-body">
+                    <table class="table table-bordered table-lg mt-lg mb-0">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <div class="checkbox">
+                                        <input id="checkbox10" type="checkbox" data-check-all>
+                                        <label for="checkbox10"></label>
+                                    </div>
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.PlanoId)
+                                </th>
+                                <th class="text-align-right">
+                                    @Html.DisplayNameFor(model => model.ValorDe)
+                                </th>
+                                <th class="text-align-center">Ações</th>
+                            </tr>
+                        </thead>
+                        @foreach (var item in Model)
+                        {
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <input id="checkbox11" type="checkbox" data-check-all>
+                                            <label for="checkbox11"></label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.PlanoId)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ValorDe)
+                                    </td>
+                                    <td>
+                                        <a href="@Url.Action("Edit", "TabelasPreco", new {id = item.TabelaPrecoId})" class="btn btn-default"><span title="Editar" class="glyphicon glyphicon-pencil"></span></a>
+                                        <a href="@Url.Action("Details", "TabelasPreco", new {id = item.TabelaPrecoId })" class="btn btn-default"><span title="Detalhes" class="glyphicon glyphicon-search"></span></a>
+                                        <a href="@Url.Action("Delete", "TabelasPreco", new {id = item.TabelaPrecoId })" class="btn btn-danger"><span title="Excluir" class="glyphicon glyphicon-trash"></span></a>
+                                    </td>
+                                </tr>
+                            </tbody>}
+                    </table>
+                </div>
+            </section>
+        </div>
+    </main>
+@*</div>*@

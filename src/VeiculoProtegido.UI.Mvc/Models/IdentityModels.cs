@@ -30,5 +30,6 @@ namespace VeiculoProtegido.UI.Mvc.Models
             return new ApplicationDbContext();
         }
 
+		public System.Data.Entity.DbSet<VeiculoProtegido.Application.ViewModels.FaixaTabelaPrecoViewModel> FaixaTabelaPrecoViewModels { get; set; }
 	}
 }
