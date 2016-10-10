@@ -157,6 +157,8 @@ namespace VeiculoProtegido.UI.Mvc.Controllers
 			return PartialView("_FaixaTabelaPrecoUpdate", _tabelaPrecoAppService.GetByIdFaixaTabelaPreco(id));
 		}
 
+		[HttpPost]
+		[ValidateAntiForgeryToken]
 		public ActionResult UpdateFaixaTabelaPreco(FaixaTabelaPrecoViewModel faixaTabelaPrecoViewModel)
 		{
 			if (ModelState.IsValid)
