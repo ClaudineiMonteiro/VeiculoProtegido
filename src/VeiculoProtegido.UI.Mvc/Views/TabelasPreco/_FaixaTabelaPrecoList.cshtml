@@ -1,69 +1,73 @@
 ﻿@model IEnumerable<VeiculoProtegido.Application.ViewModels.FaixaTabelaPrecoViewModel>
 
-<h1 class="page-title"><span class="fw-semi-bold">Faixas</span></h1>
-@if (Model.Any())
-{
-    <table class="table table-bordered table-lg mt-lg mb-0">
-        <thead>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <strong>Faixas das Tabelas de Preço</strong>
+    </div>
+    @if (Model.Any())
+    {
+        <table class="table table-bordered table-lg mt-lg mb-0">
+            <thead>
+                <tr>
+                    <th>
+                        <div class="checkbox">
+                            <input id="checkbox10" type="checkbox" data-check-all>
+                            <label for="checkbox10"></label>
+                        </div>
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.PlanoId)
+                    </th>
+                    <th class="text-align-right">
+                        @Html.DisplayNameFor(model => model.ValorDe)
+                    </th>
+                    <th class="text-align-center">Ações</th>
+                </tr>
+            </thead>
+            @foreach (var item in Model)
+            {
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="checkbox">
+                                <input id="checkbox11" type="checkbox" data-check-all>
+                                <label for="checkbox11"></label>
+                            </div>
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PlanoId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ValorDe)
+                        </td>
+                        <td>
+                            <a href="@Url.Action("UpdateFaixaTabelaPreco", "TabelasPreco", new { id = item.FaixatabelaPrecoId })" class="btn btn-default"><span title="Editar" class="glyphicon glyphicon-pencil"></span></a>
+                            <a href="@Url.Action("Details", "TabelasPreco", new { id = item.TabelaPrecoId })" class="btn btn-default"><span title="Detalhes" class="glyphicon glyphicon-search"></span></a>
+                            <a href="@Url.Action("Delete", "TabelasPreco", new { id = item.TabelaPrecoId })" class="btn btn-danger"><span title="Excluir" class="glyphicon glyphicon-trash"></span></a>
+                        </td>
+                    </tr>
+                </tbody>
+}
+        </table>
+    }
+    else
+    {
+        <table class="table">
             <tr>
                 <th>
-                    <div class="checkbox">
-                        <input id="checkbox10" type="checkbox" data-check-all>
-                        <label for="checkbox10"></label>
-                    </div>
+                    Nenhuma Faixa Cadastrada.
                 </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.PlanoId)
-                </th>
-                <th class="text-align-right">
-                    @Html.DisplayNameFor(model => model.ValorDe)
-                </th>
-                <th class="text-align-center">Ações</th>
             </tr>
-        </thead>
-        @foreach (var item in Model)
-        {
-            <tbody>
-                <tr>
-                    <td>
-                        <div class="checkbox">
-                            <input id="checkbox11" type="checkbox" data-check-all>
-                            <label for="checkbox11"></label>
-                        </div>
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.PlanoId)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.ValorDe)
-                    </td>
-                    <td>
-                        <a href="@Url.Action("UpdateFaixaTabelaPreco", "TabelasPreco", new { id = item.FaixatabelaPrecoId })" class="btn btn-default"><span title="Editar" class="glyphicon glyphicon-pencil"></span></a>
-                        <a href="@Url.Action("Details", "TabelasPreco", new { id = item.TabelaPrecoId })" class="btn btn-default"><span title="Detalhes" class="glyphicon glyphicon-search"></span></a>
-                        <a href="@Url.Action("Delete", "TabelasPreco", new { id = item.TabelaPrecoId })" class="btn btn-danger"><span title="Excluir" class="glyphicon glyphicon-trash"></span></a>
-                    </td>
-                </tr>
-            </tbody>
-        }
-    </table>
-}
-else
-{
-    <table class="table">
-    <tr>
-        <th>
-            Nenhuma Faixa Cadastrada.
-        </th>
-    </tr>
-    </table>
-}
-<div>
-    <div class="form-group">
-        @Html.ActionLink("Voltar", "Index", null, new { @class = "btn btn-default" })
-        @Html.ActionLink("Nova Faixa", "AddFaixaTabelaPreco", "TabelaPreco", new { id = ViewBag.ClienteId }, new { @class = "btn btn-primary", data_modal = "" })
-    </div>
+        </table>
+    }
 </div>
-<script type="text/javascript">
+    <div>
+        <div class="form-group">
+            @Html.ActionLink("Voltar", "Index", null, new { @class = "btn btn-default" })
+            @Html.ActionLink("Nova Faixa", "AddFaixaTabelaPreco", "TabelaPreco", new { id = ViewBag.ClienteId }, new { @class = "btn btn-primary", data_modal = "" })
+        </div>
+    </div>
+    <script type="text/javascript">
 
 
         $(function () {
@@ -100,5 +104,5 @@ else
                 return false;
             });
         }
-</script>
+    </script>
 

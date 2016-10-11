@@ -1,6 +1,7 @@
 ﻿using Microsoft.Ajax.Utilities;
 using System;
 using System.Net;
+using System.Web;
 using System.Web.Mvc;
 using VeiculoProtegido.Application.Interfaces;
 using VeiculoProtegido.Application.ViewModels;
@@ -132,7 +133,7 @@ namespace VeiculoProtegido.UI.Mvc.Controllers
 		public ActionResult ListFaixaTabelaPreco(Guid id)
 		{
 			ViewBag.TabelaPrecoId = id;
-			return PartialView("_FaixaTabelaPreco", _tabelaPrecoAppService.GetById(id).FaixasTabelaPreco);
+			return PartialView("_FaixaTabelaPrecoList", _tabelaPrecoAppService.GetById(id).FaixasTabelaPreco);
 		}
 
 		public ActionResult AddFaixaTabelaPreco(Guid id)
@@ -141,6 +142,8 @@ namespace VeiculoProtegido.UI.Mvc.Controllers
 			return PartialView("_FaixatabelaPrecoAdd");
 		}
 
+		[HttpPost]
+		[ValidateAntiForgeryToken]
 		public ActionResult AddFaixaTabelaPreco(FaixaTabelaPrecoViewModel faixaTabelaPrecoViewModel)
 		{
 			if (ModelState.IsValid)
@@ -164,7 +167,7 @@ namespace VeiculoProtegido.UI.Mvc.Controllers
 			if (ModelState.IsValid)
 			{
 				_tabelaPrecoAppService.UpdateFaixaTabelaPreco(faixaTabelaPrecoViewModel);
-				string url = Url.Action("_FaixaTabelaPrecoList", "TabelaPreco", new { id = faixaTabelaPrecoViewModel.TabelaPrecoId });
+				string url = Url.Action("ListFaixaTabelaPreco", "TabelaPreco", new { id = faixaTabelaPrecoViewModel.TabelaPrecoId });
 				return Json(new { success = true, url = url });
 			}
 			return PartialView("_FaixaTabelaPrecoUpdate", faixaTabelaPrecoViewModel);

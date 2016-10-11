@@ -5779,6 +5779,9 @@
   <ItemGroup>
     <Content Include="Views\TabelasPreco\_FaixaTabelaPrecoUpdate.cshtml" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\TabelasPreco\_FaixaTabelaPreco.cshtml" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
