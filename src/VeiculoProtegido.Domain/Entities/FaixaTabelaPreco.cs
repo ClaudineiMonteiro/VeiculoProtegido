@@ -9,7 +9,7 @@ namespace VeiculoProtegido.Domain.Entities
 			FaixatabelaPrecoId = Guid.NewGuid();
 		}
 		public Guid FaixatabelaPrecoId { get; set; }
-		public byte PlanoId { get; set; }
+		public string PlanoId { get; set; }
 		public decimal ValorDe { get; set; }
 		public decimal ValorAte { get; set; }
 		public decimal ValorMensal { get; set; }

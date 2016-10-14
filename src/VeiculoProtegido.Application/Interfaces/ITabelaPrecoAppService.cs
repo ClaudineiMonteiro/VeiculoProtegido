@@ -8,7 +8,7 @@ namespace VeiculoProtegido.Application.Interfaces
 	{
 		TabelaPrecoFaixaTabelaPrecoViewModel Add(TabelaPrecoFaixaTabelaPrecoViewModel tabelaPrecoFaixaTabelaPrecoViewModel);
 		TabelaPrecoViewModel GetById(Guid id);
-		TabelaPrecoViewModel GetByTipoFIPE(byte tipoFipe);
+		TabelaPrecoViewModel GetByTipoFIPE(string tipoFipe);
 		TabelaPrecoViewModel GetByDescricao(string descricao);
 		IEnumerable<TabelaPrecoViewModel> GetAll();
 		TabelaPrecoViewModel Update(TabelaPrecoViewModel tabelaPrecoViewModel);

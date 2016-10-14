@@ -20,7 +20,7 @@ namespace VeiculoProtegido.Infra.Data.Repository
 			return Search(s => s.Descricao.Contains(descricao)).FirstOrDefault();
 		}
 
-		public TabelaPreco GetByTipoFIPE(byte tipoFIPE)
+		public TabelaPreco GetByTipoFIPE(string tipoFIPE)
 		{
 			return Search(s => s.TipoFipe.Equals(tipoFIPE)).FirstOrDefault();
 		}

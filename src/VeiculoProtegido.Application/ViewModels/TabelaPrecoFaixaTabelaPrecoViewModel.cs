@@ -14,7 +14,7 @@ namespace VeiculoProtegido.Application.ViewModels
 		public string Descricao { get; set; }
 
 		[Required(ErrorMessage = "Preencha o campo Tipo FIPE")]
-		public byte TipoFipe { get; set; }
+		public string TipoFipe { get; set; }
 		//public virtual ICollection<FaixaTabelaPreco> FaixasTabelaPreco { get; set; }
 		[ScaffoldColumn(false)]
 		public DateTime DataHoraCadastro { get; set; }
@@ -28,7 +28,7 @@ namespace VeiculoProtegido.Application.ViewModels
 		public Guid FaixatabelaPrecoId { get; set; }
 		[Required(ErrorMessage = "Preencha o campo Plano")]
 		[MaxLength(3, ErrorMessage = "Máximo {0} caracteres")]
-		public byte PlanoId { get; set; }
+		public string PlanoId { get; set; }
 		[Required(ErrorMessage = "Preencha o campo Valor De")]
 		public decimal ValorDe { get; set; }
 		[Required(ErrorMessage = "Preencha o campo Valor Até")]

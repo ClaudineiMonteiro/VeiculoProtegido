@@ -9,14 +9,14 @@ namespace VeiculoProtegido.Domain.Interfaces.Service
 		TabelaPreco Add(TabelaPreco tabelaPreco);
 		TabelaPreco GetById(Guid id);
 		TabelaPreco GetByDescricao(string descricao);
-		TabelaPreco GetByTipoFIPE(byte tipoFIPE);
+		TabelaPreco GetByTipoFIPE(string tipoFIPE);
 		IEnumerable<TabelaPreco> GetAll();
 		TabelaPreco Update(TabelaPreco tabelaPreco);
 		void Remove(Guid id);
 		FaixaTabelaPreco AddFaixaTabelaPreco(FaixaTabelaPreco faixaTabelaPreco);
 		FaixaTabelaPreco UpdateFaixaTabelaPreco(FaixaTabelaPreco faixaTabelaPreco);
 		FaixaTabelaPreco GetByFaixaTabelaPrecoId(Guid id);
-		FaixaTabelaPreco GetByPlanoId(byte planoId);
+		FaixaTabelaPreco GetByPlanoId(string planoId);
 		void RemoveFaixaTabelaPreco(Guid id);
 	}
 }

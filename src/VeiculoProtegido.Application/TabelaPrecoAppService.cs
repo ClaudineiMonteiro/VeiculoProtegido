@@ -72,7 +72,7 @@ namespace VeiculoProtegido.Application
 			return Mapper.Map<FaixaTabelaPreco, FaixaTabelaPrecoViewModel>(_tabelaPrecoService.GetByFaixaTabelaPrecoId(id));
 		}
 
-		public TabelaPrecoViewModel GetByTipoFIPE(byte tipoFipe)
+		public TabelaPrecoViewModel GetByTipoFIPE(string tipoFipe)
 		{
 			return Mapper.Map<TabelaPreco,TabelaPrecoViewModel>(_tabelaPrecoService.GetByTipoFIPE(tipoFipe));
 		}

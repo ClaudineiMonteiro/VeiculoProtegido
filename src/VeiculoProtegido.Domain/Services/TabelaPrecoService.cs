@@ -67,12 +67,12 @@ namespace VeiculoProtegido.Domain.Services
 			return _tabelaPrecoRepository.GetById(id);
 		}
 
-		public FaixaTabelaPreco GetByPlanoId(byte planoId)
+		public FaixaTabelaPreco GetByPlanoId(string planoId)
 		{
 			return _faixaTabelaPrecoRepository.GetByPlanoId(planoId);
 		}
 
-		public TabelaPreco GetByTipoFIPE(byte tipoFIPE)
+		public TabelaPreco GetByTipoFIPE(string tipoFIPE)
 		{
 			return _tabelaPrecoRepository.GetByTipoFIPE(tipoFIPE);
 		}

@@ -5,6 +5,6 @@ namespace VeiculoProtegido.Domain.Interfaces.Repository
 	public interface ITabelaPrecoRepository : IRepository<TabelaPreco>
 	{
 		TabelaPreco GetByDescricao(string descricao);
-		TabelaPreco GetByTipoFIPE(byte tipoFIPE);
+		TabelaPreco GetByTipoFIPE(string tipoFIPE);
 	}
 }
