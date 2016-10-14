@@ -14,7 +14,8 @@ namespace VeiculoProtegido.Infra.Data.EntityConfig
 				.IsRequired()
 				.HasColumnAnnotation("idx_TabelaPreco_Descricao", new IndexAnnotation(new IndexAttribute() { IsUnique = true }));
 			Property(p => p.TipoFipe)
-				.IsRequired();
+				.IsRequired()
+				.HasMaxLength(9);
 			Property(p => p.DataHoraCadastro)
 				.IsRequired();
 			Property(p => p.DataHoraUltimaAlteracao)

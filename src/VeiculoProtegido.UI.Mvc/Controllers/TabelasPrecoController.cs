@@ -9,7 +9,7 @@ using VeiculoProtegido.Application.ViewModels;
 namespace VeiculoProtegido.UI.Mvc.Controllers
 {
 	public class TabelasPrecoController : Controller
-    {
+	{
 		private readonly ITabelaPrecoAppService _tabelaPrecoAppService;
 
 		public TabelasPrecoController(ITabelaPrecoAppService tabelaPrecoAppService)
@@ -19,36 +19,36 @@ namespace VeiculoProtegido.UI.Mvc.Controllers
 
 		// GET: TabelasPreco
 		public ActionResult Index()
-        {
-            return View(_tabelaPrecoAppService.GetAll());
-        }
+		{
+			return View(_tabelaPrecoAppService.GetAll());
+		}
 
-        // GET: TabelasPreco/Details/5
-        public ActionResult Details(Guid? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            TabelaPrecoViewModel tabelaPrecoViewModel = _tabelaPrecoAppService.GetById(id.Value);
-            if (tabelaPrecoViewModel == null)
-            {
-                return HttpNotFound();
-            }
-            return View(tabelaPrecoViewModel);
-        }
+		// GET: TabelasPreco/Details/5
+		public ActionResult Details(Guid? id)
+		{
+			if (id == null)
+			{
+				return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+			}
+			TabelaPrecoViewModel tabelaPrecoViewModel = _tabelaPrecoAppService.GetById(id.Value);
+			if (tabelaPrecoViewModel == null)
+			{
+				return HttpNotFound();
+			}
+			return View(tabelaPrecoViewModel);
+		}
 
-        // GET: TabelasPreco/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
+		// GET: TabelasPreco/Create
+		public ActionResult Create()
+		{
+			return View();
+		}
 
-        // POST: TabelasPreco/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
+		// POST: TabelasPreco/Create
+		// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+		[HttpPost]
+		[ValidateAntiForgeryToken]
 		public ActionResult Create(TabelaPrecoFaixaTabelaPrecoViewModel tabelaPrecoFaixaTabelaPrecoViewModel)
 		{
 		if (ModelState.IsValid)
@@ -197,12 +197,12 @@ namespace VeiculoProtegido.UI.Mvc.Controllers
 		}
 
 		protected override void Dispose(bool disposing)
-        {
+		{
 			if (disposing)
 			{
 				_tabelaPrecoAppService.Dispose();
 			}
 			base.Dispose(disposing);
 		}
-    }
+	}
 }

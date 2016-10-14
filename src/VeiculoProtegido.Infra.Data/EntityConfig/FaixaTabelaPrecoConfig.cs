@@ -9,7 +9,8 @@ namespace VeiculoProtegido.Infra.Data.EntityConfig
 		{
 			HasKey(k => k.FaixatabelaPrecoId);
 			Property(p => p.PlanoId)
-				.IsRequired();
+				.IsRequired()
+				.HasMaxLength(3);
 			Property(p => p.ValorDe)
 				.IsRequired();
 			Property(p => p.ValorAte)
