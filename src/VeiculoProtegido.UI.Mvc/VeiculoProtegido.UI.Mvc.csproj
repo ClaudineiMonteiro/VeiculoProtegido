@@ -5714,6 +5714,10 @@
       <Project>{69ffaa45-fe3a-481f-a83c-471443c71b3f}</Project>
       <Name>VeiculoProtegido.Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\VeiculoProtegido.Infra.CrossCutting.Global\VeiculoProtegido.Infra.CrossCutting.Global.csproj">
+      <Project>{6ac6054c-3338-437d-bee9-7e85bf62bbe3}</Project>
+      <Name>VeiculoProtegido.Infra.CrossCutting.Global</Name>
+    </ProjectReference>
     <ProjectReference Include="..\VeiculoProtegido.Infra.CrossCutting.IoC\VeiculoProtegido.Infra.CrossCutting.IoC.csproj">
       <Project>{4ed5f87b-22f2-4237-980c-4695c4f5f86d}</Project>
       <Name>VeiculoProtegido.Infra.CrossCutting.IoC</Name>

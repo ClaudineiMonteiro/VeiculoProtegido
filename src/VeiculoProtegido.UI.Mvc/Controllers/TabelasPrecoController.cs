@@ -3,6 +3,7 @@ using System;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using System.Linq;
 using VeiculoProtegido.Application.Interfaces;
 using VeiculoProtegido.Application.ViewModels;
 
@@ -41,6 +42,8 @@ namespace VeiculoProtegido.UI.Mvc.Controllers
 		// GET: TabelasPreco/Create
 		public ActionResult Create()
 		{
+			var tipoFIPEList = Infra.CrossCutting.Global.ManipulateEnumerable.EnumToList<Infra.CrossCutting.Global.TipoFipe>().OrderBy(c => (sbyte)c);
+			ViewBag.TipoFIPEList = tipoFIPEList;
 			return View();
 		}
 
