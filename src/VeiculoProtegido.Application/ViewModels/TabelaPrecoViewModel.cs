@@ -21,7 +21,7 @@ namespace VeiculoProtegido.Application.ViewModels
 		public string Descricao { get; set; }
 
 		[Required(ErrorMessage = "Preencha o campo Tipo FIPE")]
-		public string TipoFipe { get; set; }
+		public int TipoFipe { get; set; }
 
 		[ScaffoldColumn(false)]
 		public DateTime DataHoraCadastro { get; set; }

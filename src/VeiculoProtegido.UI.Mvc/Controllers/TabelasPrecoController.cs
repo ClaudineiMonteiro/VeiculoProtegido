@@ -6,9 +6,13 @@ using System.Web.Mvc;
 using System.Linq;
 using VeiculoProtegido.Application.Interfaces;
 using VeiculoProtegido.Application.ViewModels;
+using VeiculoProtegido.Infra.CrossCutting.Global;
+using System.Collections.Generic;
 
 namespace VeiculoProtegido.UI.Mvc.Controllers
 {
+
+
 	public class TabelasPrecoController : Controller
 	{
 		private readonly ITabelaPrecoAppService _tabelaPrecoAppService;
@@ -42,8 +46,21 @@ namespace VeiculoProtegido.UI.Mvc.Controllers
 		// GET: TabelasPreco/Create
 		public ActionResult Create()
 		{
-			var tipoFIPEList = Infra.CrossCutting.Global.ManipulateEnumerable.EnumToList<Infra.CrossCutting.Global.TipoFipe>().OrderBy(c => (sbyte)c);
-			ViewBag.TipoFIPEList = tipoFIPEList;
+			List<TipoFIPE> tipoFIPEList = new List<TipoFIPE>();
+			foreach (var item in ManipulateEnumerable.EnumToList<TipoFipe>().OrderBy(c => (sbyte)c))
+			{
+				var tipoFIPE = new TipoFIPE();
+				tipoFIPE.Id = (int)item;
+				tipoFIPE.Descricao = ManipulateEnumerable.BuscarDescricaoEnumerador((TipoFipe)item);
+				tipoFIPEList.Add(tipoFIPE);
+			}
+
+			ViewBag.TipoFIPEList = new SelectList
+			(
+				tipoFIPEList,
+				"Id",
+				"Descricao"
+			);
 			return View();
 		}
 

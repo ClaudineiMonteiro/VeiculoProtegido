@@ -18,7 +18,7 @@ namespace VeiculoProtegido.Domain.Entities
 		#region Attrubutes
 		public Guid TabelaPrecoId { get; set; }
 		public string Descricao { get; set; }
-		public string TipoFipe { get; set; }
+		public int TipoFipe { get; set; }
 		public virtual ICollection<FaixaTabelaPreco> FaixasTabelaPreco { get; set; }
 		public DateTime DataHoraCadastro { get; set; }
 		public DateTime DataHoraUltimaAlteracao { get; set; }

@@ -39,7 +39,13 @@
                                                 </div>
                                                 <div class="col-sm-4">
                                                     @Html.LabelFor(model => model.TipoFipe)
-                                                    @Html.DropDownListFor(model => model.TipoFipe, new SelectList(ViewBag.TipoFIPEList, "TipoFipeId", "TipoFIPEDescricao"))
+                                                    @Html.DropDownList(model => model.TipoFipe,
+                                                            ((IEnumerable<VeiculoProtegido.Application.ViewModels.TipoFIPE>)ViewBag.ProjetosFuncionario).Select(option => new SelectListItem
+                                                            {
+                                                                Text = option.Descricao,
+                                                                Value = option.Id.ToString(),
+                                                                Selected = (Model != null) && (option.Id == Model.TipoFipe)
+                                                            }), "Escolha uma opção...", new { @class = "form-control" })
                                                     @Html.ValidationMessageFor(model => model.TipoFipe, "", new { @class = "text-danger" })
                                                 </div>
                                             </div>
