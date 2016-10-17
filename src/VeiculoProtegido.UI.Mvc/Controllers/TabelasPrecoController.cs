@@ -55,12 +55,7 @@ namespace VeiculoProtegido.UI.Mvc.Controllers
 				tipoFIPEList.Add(tipoFIPE);
 			}
 
-			ViewBag.TipoFIPEList = new SelectList
-			(
-				tipoFIPEList,
-				"Id",
-				"Descricao"
-			);
+			ViewBag.TipoFIPEList = tipoFIPEList;
 			return View();
 		}
 

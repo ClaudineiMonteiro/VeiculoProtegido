@@ -13,7 +13,7 @@ namespace VeiculoProtegido.Application.ViewModels
 		public Guid FaixatabelaPrecoId { get; set; }
 		[Required(ErrorMessage = "Preencha o campo Plano")]
 		[MaxLength(3, ErrorMessage = "Máximo {0} caracteres")]
-		public string PlanoId { get; set; }
+		public int PlanoId { get; set; }
 		[Required(ErrorMessage = "Preencha o campo Valor De")]
 		public decimal ValorDe { get; set; }
 		[Required(ErrorMessage = "Preencha o campo Valor Até")]

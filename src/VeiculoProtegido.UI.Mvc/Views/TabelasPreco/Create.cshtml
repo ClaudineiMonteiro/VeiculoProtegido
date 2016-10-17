@@ -32,20 +32,14 @@
                                     <div class="row">
                                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                                             <div class="form-group">
-                                                <div class="col-sm-6">
+                                                <div class="col-sm-8">
                                                     @Html.LabelFor(model => model.Descricao)
                                                     @Html.EditorFor(model => model.Descricao, new { htmlAttributes = new { @class = "form-control", placeholder = "Digite a Descrição Aqui" } })
                                                     @Html.ValidationMessageFor(model => model.Descricao, "", new { @class = "text-danger" })
                                                 </div>
                                                 <div class="col-sm-4">
                                                     @Html.LabelFor(model => model.TipoFipe)
-                                                    @Html.DropDownList(model => model.TipoFipe,
-                                                            ((IEnumerable<VeiculoProtegido.Application.ViewModels.TipoFIPE>)ViewBag.ProjetosFuncionario).Select(option => new SelectListItem
-                                                            {
-                                                                Text = option.Descricao,
-                                                                Value = option.Id.ToString(),
-                                                                Selected = (Model != null) && (option.Id == Model.TipoFipe)
-                                                            }), "Escolha uma opção...", new { @class = "form-control" })
+                                                    @Html.DropDownListFor(model => model.TipoFipe, new SelectList(ViewBag.TipoFIPEList, "Id", "Descricao"), "Selecione...")
                                                     @Html.ValidationMessageFor(model => model.TipoFipe, "", new { @class = "text-danger" })
                                                 </div>
                                             </div>
