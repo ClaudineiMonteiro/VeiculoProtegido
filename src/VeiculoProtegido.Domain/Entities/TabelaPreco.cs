@@ -21,7 +21,7 @@ namespace VeiculoProtegido.Domain.Entities
 		public int TipoFipe { get; set; }
 		public virtual ICollection<FaixaTabelaPreco> FaixasTabelaPreco { get; set; }
 		public DateTime DataHoraCadastro { get; set; }
-		public DateTime DataHoraUltimaAlteracao { get; set; }
+		public DateTime? DataHoraUltimaAlteracao { get; set; }
 		public ValidationResult ValidationResult { get; set; }
 		#endregion
 

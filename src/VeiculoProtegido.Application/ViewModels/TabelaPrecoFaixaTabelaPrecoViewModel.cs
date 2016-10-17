@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace VeiculoProtegido.Application.ViewModels
@@ -8,7 +9,7 @@ namespace VeiculoProtegido.Application.ViewModels
 		public TabelaPrecoFaixaTabelaPrecoViewModel()
 		{
 			TabelaPrecoId = Guid.NewGuid();
-			//FaixasTabelaPreco = new List<FaixaTabelaPrecoViewModel>();
+			FaixatabelaPrecoId = Guid.NewGuid();
 
 		}
 		[Key]
@@ -21,11 +22,10 @@ namespace VeiculoProtegido.Application.ViewModels
 
 		[Required(ErrorMessage = "Preencha o campo Tipo FIPE")]
 		public int TipoFipe { get; set; }
-		//public virtual ICollection<FaixaTabelaPreco> FaixasTabelaPreco { get; set; }
 		[ScaffoldColumn(false)]
 		public DateTime DataHoraCadastro { get; set; }
 		[ScaffoldColumn(false)]
-		public DateTime DataHoraUltimaAlteracao { get; set; }
+		public DateTime? DataHoraUltimaAlteracao { get; set; }
 		[ScaffoldColumn(false)]
 		public DomainValidation.Validation.ValidationResult ValidationResult { get; set; }
 

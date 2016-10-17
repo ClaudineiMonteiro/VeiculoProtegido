@@ -71,6 +71,10 @@
       <Project>{69ffaa45-fe3a-481f-a83c-471443c71b3f}</Project>
       <Name>VeiculoProtegido.Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\VeiculoProtegido.Infra.CrossCutting.Global\VeiculoProtegido.Infra.CrossCutting.Global.csproj">
+      <Project>{6ac6054c-3338-437d-bee9-7e85bf62bbe3}</Project>
+      <Name>VeiculoProtegido.Infra.CrossCutting.Global</Name>
+    </ProjectReference>
     <ProjectReference Include="..\VeiculoProtegido.Infra.Data\VeiculoProtegido.Infra.Data.csproj">
       <Project>{f75e77f5-dfdf-4d77-8943-e1861f87c156}</Project>
       <Name>VeiculoProtegido.Infra.Data</Name>

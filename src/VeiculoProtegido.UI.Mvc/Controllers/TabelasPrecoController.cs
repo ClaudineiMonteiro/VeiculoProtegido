@@ -46,16 +46,16 @@ namespace VeiculoProtegido.UI.Mvc.Controllers
 		// GET: TabelasPreco/Create
 		public ActionResult Create()
 		{
-			List<TipoFIPE> tipoFIPEList = new List<TipoFIPE>();
-			foreach (var item in ManipulateEnumerable.EnumToList<TipoFipe>().OrderBy(c => (sbyte)c))
+			var itensSelecionaveis = new List<SelectListItem>();
+			foreach (var tipoFIPERow in TipoFIPE.ListarTipoFIPE())
 			{
-				var tipoFIPE = new TipoFIPE();
-				tipoFIPE.Id = (int)item;
-				tipoFIPE.Descricao = ManipulateEnumerable.BuscarDescricaoEnumerador((TipoFipe)item);
-				tipoFIPEList.Add(tipoFIPE);
+				itensSelecionaveis.Add(new SelectListItem
+				{
+					Value = tipoFIPERow.Id.ToString(),
+					Text = tipoFIPERow.Descricao
+				});
 			}
-
-			ViewBag.TipoFIPEList = tipoFIPEList;
+			ViewBag.TipoFIPEList = TipoFIPE.ListarTipoFIPE();
 			return View();
 		}
 

@@ -26,7 +26,7 @@ namespace VeiculoProtegido.Application.ViewModels
 		[ScaffoldColumn(false)]
 		public DateTime DataHoraCadastro { get; set; }
 		[ScaffoldColumn(false)]
-		public DateTime DataHoraUltimaAlteracao { get; set; }
+		public DateTime? DataHoraUltimaAlteracao { get; set; }
 
 		public ICollection<FaixaTabelaPrecoViewModel> FaixasTabelaPreco { get; set; }
 		#endregion
