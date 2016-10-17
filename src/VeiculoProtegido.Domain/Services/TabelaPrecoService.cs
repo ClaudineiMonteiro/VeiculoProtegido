@@ -29,7 +29,7 @@ namespace VeiculoProtegido.Domain.Services
 				return tabelaPreco;
 
 			tabelaPreco.ValidationResult = new TabelaPrecoFitToRegisterValidation(_tabelaPrecoRepository).Validate(tabelaPreco);
-			if (tabelaPreco.ValidationResult.IsValid)
+			if (!tabelaPreco.ValidationResult.IsValid)
 				return tabelaPreco;
 
 			tabelaPreco.ValidationResult.Message = "Tabela de Preço cadastrada com sucesso :)";

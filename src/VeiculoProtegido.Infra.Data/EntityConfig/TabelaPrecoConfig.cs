@@ -17,8 +17,8 @@ namespace VeiculoProtegido.Infra.Data.EntityConfig
 				.IsRequired();
 			Property(p => p.DataHoraCadastro)
 				.IsRequired();
-			Property(p => p.DataHoraUltimaAlteracao)
-				.IsOptional();
+			//Property(p => p.DataHoraUltimaAlteracao)
+			//	.IsOptional();
 			Ignore(i => i.ValidationResult);
 			ToTable("TabelaPrecos");
 		}

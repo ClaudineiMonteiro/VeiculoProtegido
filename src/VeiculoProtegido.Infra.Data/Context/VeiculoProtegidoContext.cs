@@ -39,15 +39,7 @@ namespace VeiculoProtegido.Infra.Data.Context
 		{
 			foreach (var entry in ChangeTracker.Entries().Where(entry => entry.Entity.GetType().GetProperty("DataHoraUltimaAlteracao") != null))
 			{
-				if (entry.State == EntityState.Modified)
-				{
-					entry.Property("DataHoraUltimaAlteracao").CurrentValue = DateTime.Now;
-				}
-
-				if (entry.State == EntityState.Added)
-				{
-					entry.Property("DataHoraUltimaAlteracao").IsModified = false;
-				}
+				entry.Property("DataHoraUltimaAlteracao").CurrentValue = DateTime.Now;
 			}
 
 			foreach (var entry in ChangeTracker.Entries().Where(entry => entry.Entity.GetType().GetProperty("DataHoraCadastro") != null))

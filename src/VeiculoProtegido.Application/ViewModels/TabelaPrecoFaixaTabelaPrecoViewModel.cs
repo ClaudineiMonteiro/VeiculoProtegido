@@ -5,6 +5,12 @@ namespace VeiculoProtegido.Application.ViewModels
 {
 	public class TabelaPrecoFaixaTabelaPrecoViewModel
 	{
+		public TabelaPrecoFaixaTabelaPrecoViewModel()
+		{
+			TabelaPrecoId = Guid.NewGuid();
+			//FaixasTabelaPreco = new List<FaixaTabelaPrecoViewModel>();
+
+		}
 		[Key]
 		public Guid TabelaPrecoId { get; set; }
 
