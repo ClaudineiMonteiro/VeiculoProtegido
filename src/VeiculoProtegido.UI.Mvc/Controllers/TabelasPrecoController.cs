@@ -46,16 +46,7 @@ namespace VeiculoProtegido.UI.Mvc.Controllers
 		// GET: TabelasPreco/Create
 		public ActionResult Create()
 		{
-			var itensSelecionaveis = new List<SelectListItem>();
-			foreach (var tipoFIPERow in TipoFIPE.ListarTipoFIPE())
-			{
-				itensSelecionaveis.Add(new SelectListItem
-				{
-					Value = tipoFIPERow.Id.ToString(),
-					Text = tipoFIPERow.Descricao
-				});
-			}
-			ViewBag.TipoFIPEList = TipoFIPE.ListarTipoFIPE();
+			ViewBag.TipoFIPEList = TipoFIPEViewModel.ListarTipoFIPE();
 			return View();
 		}
 

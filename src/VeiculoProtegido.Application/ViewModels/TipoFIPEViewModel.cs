@@ -4,17 +4,17 @@ using VeiculoProtegido.Infra.CrossCutting.Global;
 
 namespace VeiculoProtegido.Application.ViewModels
 {
-	public class TipoFIPE
+	public class TipoFIPEViewModel
 	{
 		public int Id { get; set; }
 		public string Descricao { get; set; }
 
-		public static List<TipoFIPE> ListarTipoFIPE()
+		public static List<TipoFIPEViewModel> ListarTipoFIPE()
 		{
-			List<TipoFIPE> tipoFIPEList = new List<TipoFIPE>();
+			List<TipoFIPEViewModel> tipoFIPEList = new List<TipoFIPEViewModel>();
 			foreach (var item in ManipulateEnumerable.EnumToList<TipoFipe>().OrderBy(c => (sbyte)c))
 			{
-				var tipoFIPE = new TipoFIPE();
+				var tipoFIPE = new TipoFIPEViewModel();
 				tipoFIPE.Id = (int)item;
 				tipoFIPE.Descricao = ManipulateEnumerable.BuscarDescricaoEnumerador((TipoFipe)item);
 				tipoFIPEList.Add(tipoFIPE);

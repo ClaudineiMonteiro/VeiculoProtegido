@@ -1,0 +1,13 @@
+﻿@model IEnumerable<VeiculoProtegido.Application.ViewModels.TipoFIPEViewModel>
+<div class="form-group">
+    <select id="cboTipoFIPE"
+            data-placeholder="Selecionar Tipo"
+            class="select2 form-control"
+            tabindex="-1"
+            name="TipoFIPE">
+        <option value=""></option>
+        @foreach (var item in Model)
+        {
+            <option value="@item.Id">@item.Descricao</option>}
+    </select>
+</div>

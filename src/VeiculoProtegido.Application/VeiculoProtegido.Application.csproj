@@ -63,7 +63,7 @@
     <Compile Include="ViewModels\PrecoFIPEViewModel.cs" />
     <Compile Include="ViewModels\TabelaPrecoFaixaTabelaPrecoViewModel.cs" />
     <Compile Include="ViewModels\TabelaPrecoViewModel.cs" />
-    <Compile Include="ViewModels\TipoFIPE.cs" />
+    <Compile Include="ViewModels\TipoFIPEViewModel.cs" />
     <Compile Include="ViewModels\VeiculoViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
