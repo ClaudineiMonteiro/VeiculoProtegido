@@ -9,7 +9,7 @@ namespace VeiculoProtegido.Application.ViewModels
 		public int Id { get; set; }
 		public string Descricao { get; set; }
 
-		public static List<TipoFIPEViewModel> ListarTipoFIPE()
+		public static List<TipoFIPEViewModel> ListTipoFIPE()
 		{
 			List<TipoFIPEViewModel> tipoFIPEList = new List<TipoFIPEViewModel>();
 			foreach (var item in ManipulateEnumerable.EnumToList<TipoFipe>().OrderBy(c => (sbyte)c))

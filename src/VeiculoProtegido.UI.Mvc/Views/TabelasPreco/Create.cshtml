@@ -40,7 +40,7 @@
                                                 <div class="col-sm-4">
                                                     @Html.LabelFor(model => model.TipoFipe)
                                                     @*@Html.DropDownListFor(model => model.TipoFipe, new SelectList(ViewBag.TipoFIPEList, "Id", "Descricao"), string.Empty)*@
-                                                    @Html.Partial("_TipoFIPE", VeiculoProtegido.Application.ViewModels.TipoFIPEViewModel.ListarTipoFIPE())
+                                                    @Html.Partial("_TipoFIPE", VeiculoProtegido.Application.ViewModels.TipoFIPEViewModel.ListTipoFIPE())
                                                     @Html.ValidationMessageFor(model => model.TipoFipe, "", new { @class = "text-danger" })
                                                 </div>
                                             </div>
