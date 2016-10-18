@@ -9,17 +9,34 @@ namespace VeiculoProtegido.Application.ViewModels
 		public int Id { get; set; }
 		public string Descricao { get; set; }
 
-		public static List<TipoFIPEViewModel> ListTipoFIPE()
+		public List<TipoFIPEViewModel> TipoFIPEViewModels { get; set; }
+		public TipoFIPEViewModel(int? tipoFIPEId)
 		{
-			List<TipoFIPEViewModel> tipoFIPEList = new List<TipoFIPEViewModel>();
+			Id = tipoFIPEId.Value;
+			TipoFIPEViewModels = new List<TipoFIPEViewModel>();
 			foreach (var item in ManipulateEnumerable.EnumToList<TipoFipe>().OrderBy(c => (sbyte)c))
 			{
 				var tipoFIPE = new TipoFIPEViewModel();
 				tipoFIPE.Id = (int)item;
 				tipoFIPE.Descricao = ManipulateEnumerable.BuscarDescricaoEnumerador((TipoFipe)item);
-				tipoFIPEList.Add(tipoFIPE);
+				TipoFIPEViewModels.Add(tipoFIPE);
 			}
-			return tipoFIPEList;
 		}
+		public TipoFIPEViewModel()
+		{
+
+		}
+		//public static List<TipoFIPEViewModel> ListTipoFIPE()
+		//{
+		//	List<TipoFIPEViewModel> tipoFIPEList = new List<TipoFIPEViewModel>();
+		//	foreach (var item in ManipulateEnumerable.EnumToList<TipoFipe>().OrderBy(c => (sbyte)c))
+		//	{
+		//		var tipoFIPE = new TipoFIPEViewModel();
+		//		tipoFIPE.Id = (int)item;
+		//		tipoFIPE.Descricao = ManipulateEnumerable.BuscarDescricaoEnumerador((TipoFipe)item);
+		//		tipoFIPEList.Add(tipoFIPE);
+		//	}
+		//	return tipoFIPEList;
+		//}
 	}
 }

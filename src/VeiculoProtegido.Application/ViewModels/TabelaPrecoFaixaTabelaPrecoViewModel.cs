@@ -10,7 +10,7 @@ namespace VeiculoProtegido.Application.ViewModels
 		{
 			TabelaPrecoId = Guid.NewGuid();
 			FaixatabelaPrecoId = Guid.NewGuid();
-
+			TipoFipe = (int)VeiculoProtegido.Infra.CrossCutting.Global.TipoFipe.carros;
 		}
 		[Key]
 		public Guid TabelaPrecoId { get; set; }

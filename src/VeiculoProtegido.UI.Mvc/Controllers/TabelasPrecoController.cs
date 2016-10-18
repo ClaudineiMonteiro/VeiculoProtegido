@@ -11,8 +11,6 @@ using System.Collections.Generic;
 
 namespace VeiculoProtegido.UI.Mvc.Controllers
 {
-	[RoutePrefix("Cadastros-TabelaPrecos")]
-	[Route("{action=Listar}")]
 	public class TabelasPrecoController : Controller
 	{
 		private readonly ITabelaPrecoAppService _tabelaPrecoAppService;
@@ -23,7 +21,6 @@ namespace VeiculoProtegido.UI.Mvc.Controllers
 		}
 
 		// GET: TabelasPreco
-		[Route("Listar")]
 		public ActionResult Index()
 		{
 			return View(_tabelaPrecoAppService.GetAll());
@@ -45,11 +42,9 @@ namespace VeiculoProtegido.UI.Mvc.Controllers
 		}
 
 		// GET: TabelasPreco/Create
-		[Route("Adicionar")]
 		public ActionResult Create()
 		{
-			ViewBag.TipoFIPEList = TipoFIPEViewModel.ListTipoFIPE();
-			return View();
+			return View(new TabelaPrecoFaixaTabelaPrecoViewModel());
 		}
 
 		// POST: TabelasPreco/Create
