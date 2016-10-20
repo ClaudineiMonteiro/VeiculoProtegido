@@ -3,10 +3,6 @@
 @{
     ViewBag.Title = "Create";
 }
-
-<h2>Adicionando</h2>
-
-
 @using (Html.BeginForm("Create", "TabelasPreco", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
@@ -17,20 +13,23 @@
             </ol>
             <h1 class="page-title"><span class="fw-semi-bold">Tabelas de Preço</span></h1>
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-8 col-md-offset-1">
                     <section class="widget">
                         <header>
                             <div class="widget-controls">
-                                <a href="#"><i class="glyphicon glyphicon-cog"></i></a>
-                                <a href="#"><i class="fa fa-refresh"></i></a>
-                                <a href="#" data-widgster="close"><i class="glyphicon glyphicon-remove"></i></a>
+                                <a data-widgster="expand" title="Expand" href="#"><i class="glyphicon glyphicon-chevron-up"></i></a>
+                                <a data-widgster="collapse" title="Collapse" href="#"><i class="glyphicon glyphicon-chevron-down"></i></a>
+                                <a data-widgster="close" title="Close" href="#"><i class="glyphicon glyphicon-remove"></i></a>
                             </div>
                         </header>
                         <div class="widget-body">
-                            <form role="form">
+                            <form id="validation-form" class="form-horizontal form-label-left" method="post"
+                                    data-parsley-priority-enabled="false"
+                                    novalidate="novalidate">
                                 <fieldset>
                                     <div class="row">
                                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                        <div class="form-group">
                                             <div class="form-group">
                                                 <div class="col-sm-8">
                                                     @Html.LabelFor(model => model.Descricao)
@@ -44,30 +43,31 @@
                                                     @Html.ValidationMessageFor(model => model.TipoFipe, "", new { @class = "text-danger" })
                                                 </div>
                                             </div>
-                                            <div class="form-group">
-                                                <div class="col-sm-2">
-                                                    @Html.LabelFor(model => model.PlanoId)
-                                                    @Html.EditorFor(model => model.PlanoId, new { htmlAttributes = new { @class = "form-control" } })
-                                                    @Html.ValidationMessageFor(model => model.PlanoId, "", new { @class = "text-danger" })
-                                                </div>
-                                                <div class="col-sm-5">
-                                                    @Html.LabelFor(model => model.ValorDe)
-                                                    @Html.EditorFor(model => model.ValorDe, new { htmlAttributes = new { @class = "form-control" } })
-                                                    @Html.ValidationMessageFor(model => model.ValorDe, "", new { @class = "text-danger" })
-                                                </div>
-                                                <div class="col-sm-5">
-                                                    @Html.LabelFor(model => model.ValorAte)
-                                                    @Html.EditorFor(model => model.ValorAte, new { htmlAttributes = new { @class = "form-control" } })
-                                                    @Html.ValidationMessageFor(model => model.ValorAte, "", new { @class = "text-danger" })
-                                                </div>
-                                            </div>
+                                        </div>
                                         <div class="form-group">
-                                            <div class="col-sm-4">
+                                            <div class="col-sm-2">
+                                                @Html.LabelFor(model => model.PlanoId)
+                                                @Html.EditorFor(model => model.PlanoId, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.PlanoId, "", new { @class = "text-danger" })
+                                            </div>
+                                            <div class="col-sm-5">
+                                                @Html.LabelFor(model => model.ValorDe)
+                                                @Html.EditorFor(model => model.ValorDe, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.ValorDe, "", new { @class = "text-danger" })
+                                            </div>
+                                            <div class="col-sm-5">
+                                                @Html.LabelFor(model => model.ValorAte)
+                                                @Html.EditorFor(model => model.ValorAte, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.ValorAte, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-sm-3">
                                                 @Html.LabelFor(model => model.ValorMensal)
                                                 @Html.EditorFor(model => model.ValorMensal, new { htmlAttributes = new { @class = "form-control" } })
                                                 @Html.ValidationMessageFor(model => model.ValorMensal, "", new { @class = "text-danger" })
                                             </div>
-                                            <div class="col-sm-4">
+                                            <div class="col-sm-5">
                                                 @Html.LabelFor(model => model.ValorParticipacaoEvento)
                                                 @Html.EditorFor(model => model.ValorParticipacaoEvento, new { htmlAttributes = new { @class = "form-control" } })
                                                 @Html.ValidationMessageFor(model => model.ValorParticipacaoEvento, "", new { @class = "text-danger" })
@@ -78,14 +78,14 @@
                                                 @Html.ValidationMessageFor(model => model.ValorAdesao, "", new { @class = "text-danger" })
                                             </div>
                                         </div>
-                                            <br />
+                                        <br />
+                                    </div>
+                                    <div class="col-sm-offset-6">
+                                        <div class="btn-toolbar">
+                                            <button id="btnAdicionar" type="submit" class="btn btn-primary pull-right">Adicionar</button>
+                                            <button id="btnCancelar" type="button" class="btn btn-inverse pull-right">Cancelar</button>
                                         </div>
-                                        <div class="col-sm-offset-6">
-                                            <div class="btn-toolbar">
-                                                <button id="btnAdicionar" type="submit" class="btn btn-primary pull-right">Adicionar</button>
-                                                <button id="btnCancelar" type="button" class="btn btn-inverse pull-right">Cancelar</button>
-                                            </div>
-                                        </div>
+                                    </div>
                                 </fieldset>
                             </form>
                         </div>
@@ -95,10 +95,6 @@
         </main>
     </div>
 }
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
 
 <div class="loader-wrap hiding hide">
     <i class="fa fa-circle-o-notch fa-spin-fast"></i>
@@ -121,4 +117,3 @@
 <script src="~/vendor/widgster/widgster.js"></script>
 <script src="~/vendor/pace.js/pace.js" data-pace-options='{ "target": ".content-wrap", "ghostTime": 1000 }'></script>
 <script src="~/vendor/jquery-touchswipe/jquery.touchSwipe.js"></script>
-

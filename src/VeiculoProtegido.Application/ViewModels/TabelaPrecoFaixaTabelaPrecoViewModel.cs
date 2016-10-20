@@ -53,7 +53,7 @@ namespace VeiculoProtegido.Application.ViewModels
 		[Required(ErrorMessage = "Preencha o campo Valor Mensalidade")]
 		public decimal ValorMensal { get; set; }
 
-		[Display(Name = "Valor participação no evento")]
+		[Display(Name = "Participação no evento")]
 		[Required(ErrorMessage = "Preencha o campo Valor Participação")]
 		public decimal ValorParticipacaoEvento { get; set; }
 

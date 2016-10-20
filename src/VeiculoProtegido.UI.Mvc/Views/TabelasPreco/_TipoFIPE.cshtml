@@ -1,20 +1,18 @@
 ﻿@model VeiculoProtegido.Application.ViewModels.TipoFIPEViewModel
-@*<div class="form-group">*@
-    <select id="cboTipoFIPE"
-            data-placeholder="Selecionar Tipo"
-            class="select2 form-control"
-            name="TipoFIPE">
-        <option value=""></option>
-        @foreach (var item in Model.TipoFIPEViewModels)
+<select data-placeholder="Selecionar Tipo"
+        class="select2 form-control" id="default-select">
+        name="TipoFIPE">
+    <option value=""></option>
+    @foreach (var item in Model.TipoFIPEViewModels)
+    {
+        if (item.Id.Equals(Model.Id))
         {
-            if (item.Id.Equals(Model.Id))
-            {
-                <option value="@item.Id" selected>@item.Descricao</option>
-            }
-            else
-            {
-                <option value="@item.Id">@item.Descricao</option>
-            }
+            <option value="@item.Id" selected>@item.Descricao</option>
         }
-    </select>
-@*</div>*@
+        else
+        {
+            <option value="@item.Id">@item.Descricao</option>
+        }
+    }
+</select>
+

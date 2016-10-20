@@ -513,7 +513,13 @@
             </footer>
         </div>
     </div>
-    @RenderBody()
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Monteiro & Mota Sistemas</p>
+        </footer>
+    </div>
     <!-- The Loader. Is shown when pjax happens -->
     <div class="loader-wrap hiding hide">
         <i class="fa fa-circle-o-notch fa-spin-fast"></i>
@@ -554,5 +560,7 @@
 
     <!-- page specific js -->
     @*<script src="~/js/index.js"></script>*@
+
+
 </body>
 </html>
