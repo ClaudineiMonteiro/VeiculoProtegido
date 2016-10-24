@@ -16,3 +16,9 @@ D:\Claudinei\Projetos\Git\github\VeiculoProtegido\VeiculoProtegido\src\VeiculoPr
 D:\Claudinei\Projetos\Git\github\VeiculoProtegido\VeiculoProtegido\src\VeiculoProtegido.Domain\obj\Debug\VeiculoProtegido.Domain.dll
 D:\Claudinei\Projetos\Git\github\VeiculoProtegido\VeiculoProtegido\src\VeiculoProtegido.Domain\obj\Debug\VeiculoProtegido.Domain.pdb
 D:\Claudinei\Projetos\Git\github\VeiculoProtegido\VeiculoProtegido\src\VeiculoProtegido.Domain\obj\Debug\VeiculoProtegido.Domain.csprojResolveAssemblyReference.cache
+D:\Claudinei\Projetos\GitHub\VeiculoProtegido\src\VeiculoProtegido.Domain\bin\Debug\VeiculoProtegido.Domain.dll
+D:\Claudinei\Projetos\GitHub\VeiculoProtegido\src\VeiculoProtegido.Domain\bin\Debug\VeiculoProtegido.Domain.pdb
+D:\Claudinei\Projetos\GitHub\VeiculoProtegido\src\VeiculoProtegido.Domain\bin\Debug\DomainValidation.dll
+D:\Claudinei\Projetos\GitHub\VeiculoProtegido\src\VeiculoProtegido.Domain\obj\Debug\VeiculoProtegido.Domain.csprojResolveAssemblyReference.cache
+D:\Claudinei\Projetos\GitHub\VeiculoProtegido\src\VeiculoProtegido.Domain\obj\Debug\VeiculoProtegido.Domain.dll
+D:\Claudinei\Projetos\GitHub\VeiculoProtegido\src\VeiculoProtegido.Domain\obj\Debug\VeiculoProtegido.Domain.pdb

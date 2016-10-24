@@ -16,3 +16,9 @@ D:\Claudinei\Projetos\Git\github\VeiculoProtegido\VeiculoProtegido\tests\Veiculo
 D:\Claudinei\Projetos\Git\github\VeiculoProtegido\VeiculoProtegido\tests\VeiculoProtegido.Domain.Tests\obj\Debug\VeiculoProtegido.Domain.Tests.csprojResolveAssemblyReference.cache
 D:\Claudinei\Projetos\Git\github\VeiculoProtegido\VeiculoProtegido\tests\VeiculoProtegido.Domain.Tests\obj\Debug\VeiculoProtegido.Domain.Tests.dll
 D:\Claudinei\Projetos\Git\github\VeiculoProtegido\VeiculoProtegido\tests\VeiculoProtegido.Domain.Tests\obj\Debug\VeiculoProtegido.Domain.Tests.pdb
+D:\Claudinei\Projetos\GitHub\VeiculoProtegido\tests\VeiculoProtegido.Domain.Tests\bin\Debug\VeiculoProtegido.Domain.Tests.dll
+D:\Claudinei\Projetos\GitHub\VeiculoProtegido\tests\VeiculoProtegido.Domain.Tests\bin\Debug\VeiculoProtegido.Domain.Tests.pdb
+D:\Claudinei\Projetos\GitHub\VeiculoProtegido\tests\VeiculoProtegido.Domain.Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+D:\Claudinei\Projetos\GitHub\VeiculoProtegido\tests\VeiculoProtegido.Domain.Tests\obj\Debug\VeiculoProtegido.Domain.Tests.csprojResolveAssemblyReference.cache
+D:\Claudinei\Projetos\GitHub\VeiculoProtegido\tests\VeiculoProtegido.Domain.Tests\obj\Debug\VeiculoProtegido.Domain.Tests.dll
+D:\Claudinei\Projetos\GitHub\VeiculoProtegido\tests\VeiculoProtegido.Domain.Tests\obj\Debug\VeiculoProtegido.Domain.Tests.pdb
