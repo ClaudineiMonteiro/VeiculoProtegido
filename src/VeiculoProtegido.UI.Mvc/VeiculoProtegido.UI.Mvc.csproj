@@ -260,7 +260,7 @@
     <Content Include="js\gmap.js" />
     <Content Include="js\grid.js" />
     <Content Include="js\inbox.js" />
-    <Content Include="js\index.js" />
+    <Content Include="js\_layout.js" />
     <Content Include="js\invoice.js" />
     <Content Include="js\maps-vector.js" />
     <Content Include="js\settings.js" />

@@ -60,6 +60,21 @@ namespace VeiculoProtegido.UI.Mvc
 					  "~/vendor/seiyria-bootstrap-slider/dist/bootstrap-slider.min.js"
 					  ));
 
+			bundles.Add(new ScriptBundle("~/layout").Include(
+					  "~/vendor/underscore/underscore.js",
+					  "~/vendor/jquery.sparkline/index.js",
+					  "~/vendor/jquery.sparkline/index.js",
+					  "~/vendor/d3/d3.min.js",
+					  "~/vendor/rickshaw/rickshaw.js",
+					  "~/vendor/raphael/raphael-min.js",
+					  "~/vendor/jQuery-Mapael/js/jquery.mapael.js",
+					  "~/vendor/jQuery-Mapael/js/maps/usa_states.js",
+					  "~/vendor/jQuery-Mapael/js/maps/world_countries.js",
+					  "~/vendor/bootstrap-sass/assets/javascripts/bootstrap/popover.js",
+					  "~/vendor/bootstrap_calendar/bootstrap_calendar/js/bootstrap_calendar.min.js",
+					  "~/vendor/jquery-animateNumber/jquery.animateNumber.min.js"
+					  ));
+
 			bundles.Add(new StyleBundle("~/css").Include(
 					  "~/css/application.min.css",
 					  "~/vendor/bootstrap/dist/css/bootstrap.min.css.map",
