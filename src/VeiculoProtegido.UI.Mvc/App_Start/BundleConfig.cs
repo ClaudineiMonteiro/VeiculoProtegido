@@ -76,14 +76,15 @@ namespace VeiculoProtegido.UI.Mvc
 					  ));
 
 			bundles.Add(new StyleBundle("~/css").Include(
-					  "~/css/application.min.css",
-					  "~/vendor/bootstrap/dist/css/bootstrap.min.css.map",
-					  "~/vendor/bootstrap/dist/css/bootstrap-theme.css",
-					  "~/vendor/bootstrap/dist/css/bootstrap-theme.css.map",
-					  "~/vendor/bootstrap/dist/css/bootstrap-theme.min.css",
-					  "~/vendor/bootstrap/dist/css/bootstrap-theme.min.css.map",
-					  "~/vendor/bootstrap/dist/css/bootstrap.css",
-					  "~/vendor/bootstrap/dist/css/bootstrap.css.map"
+					  "~/css/application.min.css"
+					  //,
+					  //"~/vendor/bootstrap/dist/css/bootstrap.min.css.map",
+					  //"~/vendor/bootstrap/dist/css/bootstrap-theme.css",
+					  //"~/vendor/bootstrap/dist/css/bootstrap-theme.css.map",
+					  //"~/vendor/bootstrap/dist/css/bootstrap-theme.min.css",
+					  //"~/vendor/bootstrap/dist/css/bootstrap-theme.min.css.map",
+					  //"~/vendor/bootstrap/dist/css/bootstrap.css",
+					  //"~/vendor/bootstrap/dist/css/bootstrap.css.map"
 					  ));
 		}
 	}

@@ -13,7 +13,7 @@
             </ol>
             <h1 class="page-title"><span class="fw-semi-bold">Tabelas de Preço</span></h1>
             <div class="row">
-                <div class="col-md-8 col-md-offset-1">
+                <div class="col-md-8">
                     <section class="widget">
                         <header>
                             <div class="widget-controls">
@@ -29,19 +29,18 @@
                                 <fieldset>
                                     <div class="row">
                                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                                        <div class="form-group">
                                             <div class="form-group">
-                                                <div class="col-sm-8">
-                                                    @Html.LabelFor(model => model.Descricao)
-                                                    @Html.EditorFor(model => model.Descricao, new { htmlAttributes = new { @class = "form-control", placeholder = "Digite a Descrição Aqui" } })
+                                                <div class="col-sm-12">
+                                                    @Html.LabelFor(model => model.Descricao, new { @class = "col-sm-2 control-label" })
+                                                    @Html.EditorFor(model => model.Descricao, new { htmlAttributes = new { @class = "col-sm-12 form-control", placeholder = "Digite a Descrição Aqui" } })
                                                     @Html.ValidationMessageFor(model => model.Descricao, "", new { @class = "text-danger" })
                                                 </div>
-                                                <div class="col-sm-4">
-                                                    @Html.LabelFor(model => model.TipoFipe)
-                                                    @*@Html.DropDownListFor(model => model.TipoFipe, new SelectList(ViewBag.TipoFIPEList, "Id", "Descricao"), string.Empty)*@
-                                                    @Html.Partial("_TipoFIPE", new VeiculoProtegido.Application.ViewModels.TipoFIPEViewModel(@Model.TipoFipe))
-                                                    @Html.ValidationMessageFor(model => model.TipoFipe, "", new { @class = "text-danger" })
-                                                </div>
+                                            </div>
+                                        <div class="form-group">
+                                            <div class="col-sm-4">
+                                                @Html.LabelFor(model => model.TipoFipe)
+                                                @Html.Partial("_TipoFIPE", new VeiculoProtegido.Application.ViewModels.TipoFIPEViewModel(@Model.TipoFipe))
+                                                @Html.ValidationMessageFor(model => model.TipoFipe, "", new { @class = "text-danger" })
                                             </div>
                                         </div>
                                         <div class="form-group">
