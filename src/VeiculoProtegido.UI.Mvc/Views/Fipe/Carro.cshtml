@@ -10,7 +10,7 @@
         </ol>
         <h1 class="page-title"><span class="fw-semi-bold">Carros e Utilitários Pequenos</span></h1>
         <div class="row">
-            <div class="col-lg-4 col-md-8">
+            <div class="col-lg-8 col-md-8">
                 <section class="widget">
                     <header>
                         <div class="widget-controls">
@@ -23,7 +23,7 @@
                         <form role="form">
                             <fieldset>
                                 <div class="row">
-                                    <div class="col-md-8">
+                                    <div class="col-md-10">
                                         <div class="form-group">
                                             <label class="control-label" for="MarcaSelect">Selecione a Marca do Veiculo</label>
                                             <select id="cboMarca"
@@ -34,7 +34,8 @@
                                                 <option value=""></option>
                                                 @foreach (var marca in Model)
                                                 {
-                                                    <option value="@marca.codigo">@marca.nome</option>}
+                                                    <option value="@marca.codigo">@marca.nome</option>
+                                                }
                                             </select>
                                         </div>
                                     </div>
@@ -76,7 +77,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-8 col-md-8">
                 <section class="widget">
                     <header>
                         <h4>

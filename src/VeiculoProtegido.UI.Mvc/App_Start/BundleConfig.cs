@@ -76,7 +76,7 @@ namespace VeiculoProtegido.UI.Mvc
 					  ));
 
 			bundles.Add(new StyleBundle("~/css").Include(
-					  "~/css/application.min.css"
+					  "~/css/application.css"
 					  //,
 					  //"~/vendor/bootstrap/dist/css/bootstrap.min.css.map",
 					  //"~/vendor/bootstrap/dist/css/bootstrap-theme.css",
