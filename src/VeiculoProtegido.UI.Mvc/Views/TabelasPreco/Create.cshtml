@@ -3,14 +3,14 @@
 @{
     ViewBag.Title = "Create";
 }
-@using (Html.BeginForm("Create", "TabelasPreco", FormMethod.Post, new { enctype = "multipart/form-data" }))
-{
+@*@using (Html.BeginForm("Create", "TabelasPreco", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{*@
     @Html.AntiForgeryToken()
     <div class="content-wrap">
         <main id="content" class="content" role="main">
             <h1 class="page-title">Cadastro - <span class="fw-semi-bold">Tabelas de Preço</span></h1>
             <div class="row">
-                <div class="col-md-8">
+                <div class="col-lg-8 col-md-8">
                     <section class="widget">
                         <header>
                             <legend><strong>Dados</strong> Tabela</legend>
@@ -24,14 +24,14 @@
                             <form role="form">
                                 <fieldset>
                                     <div class="row">
-                                        <div class="col-sm-8">
+                                        @*<div class="col-lg-8 col-sm-8">*@
                                             <div class="form-group">
                                                 @Html.LabelFor(model => model.Descricao)
-                                                <div class="input-group col-sm-8">
-                                                    @Html.EditorFor(Model => Model.Descricao, new { @class = "form-control"})
-                                                </div>
+                                                @*<div class="input-group col-sm-8">*@
+                                                    @Html.EditorFor(Model => Model.Descricao, new { @class = "select2 form-control" })
+                                                @*</div>*@
                                             </div>
-                                        </div>
+                                        @*</div>*@
                                     </div>
                                 </fieldset>
                             </form>
@@ -42,7 +42,7 @@
         </main>
     </div>
 
-}
+@*}*@
 
         <div class="loader-wrap hiding hide">
             <i class="fa fa-circle-o-notch fa-spin-fast"></i>
