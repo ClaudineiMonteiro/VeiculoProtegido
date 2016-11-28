@@ -13,7 +13,7 @@ namespace VeiculoProtegido.UI.App
 		{
 			InitializeComponent();
 
-			MainPage = new VeiculoProtegido.UI.App.MainPage();
+			MainPage = new VeiculoProtegido.UI.App.Views.ManuPrincipal();
 		}
 
 		protected override void OnStart()
