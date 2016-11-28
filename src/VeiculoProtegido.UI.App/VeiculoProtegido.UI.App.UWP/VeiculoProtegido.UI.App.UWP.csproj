@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProjectGuid>{4A14E58A-5D0D-4A14-AABD-7F69AB791EF6}</ProjectGuid>
+    <ProjectGuid>{4AF0F0D5-BDDE-4B57-9614-517994CDA203}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>VeiculoProtegido.UI.App.UWP</RootNamespace>
@@ -129,7 +129,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\VeiculoProtegido.UI.App\VeiculoProtegido.UI.App.csproj">
-      <Project>{9b892233-5bf2-4844-a9bf-565f5219ed5e}</Project>
+      <Project>{cedfecf0-8996-42ab-97b5-5d661c2900b7}</Project>
       <Name>VeiculoProtegido.UI.App</Name>
     </ProjectReference>
   </ItemGroup>
